@@ -72,11 +72,14 @@ is2.mzstatic.com -> a2.da1.akamai.net -> 23.220.203.9
 is3.mzstatic.com -> a3.da1.akamai.net -> 23.220.203.8
 新加坡 Akamai
 
-radio-services.itunes.apple.com -> e7542.e9.akamaiedge.net -> 96.17.217.22
-洛杉矶 Akamai
+radio.itunes.apple.com -> e7542.e9.akamaiedge.net -> e7542.e9.akamaiedge.net -> 96.17.217.22 23.42.69.185
+洛杉矶 Akamai | 东京 Akamai 
 
-radio-activity.itunes.apple.com -> e7542.e9.akamaiedge.net -> 96.17.217.22
-洛杉矶 Akamai
+radio-services.itunes.apple.com -> e7542.e9.akamaiedge.net -> 96.17.217.22 23.42.69.185
+洛杉矶 Akamai | 东京 Akamai 
+
+radio-activity.itunes.apple.com -> e7542.e9.akamaiedge.net -> 96.17.217.22 23.42.69.185
+洛杉矶 Akamai | 东京 Akamai
 
 init.itunes.apple.com -> e673.e9.akamaiedge.net -> 23.7.137.56
 洛杉矶 Akamai
@@ -104,8 +107,8 @@ streamingaudio.itunes.apple.com -> app.dlmix.ourdvs.com ->
 122.228.233.205 122.228.237.167 122.228.237.169 122.228.237.170 183.134.9.60 183.134.9.61 115.231.171.46 115.231.20.48 115.231.30.107 115.231.74.144 115.231.74.147 115.231.87.128 122.228.233.199 122.228.233.203 122.228.233.204
 温州电信 | 嘉兴电信 | 嘉兴电信 | 温州电信
 
-play.itunes.apple.com -> e673.e9.akamaiedge.net -> 23.7.137.56
-洛杉矶 Akamai
+play.itunes.apple.com -> e673.e9.akamaiedge.net -> 23.7.137.56 118.215.176.66
+洛杉矶 Akamai | 东京 Akamai
 
 
 
