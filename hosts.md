@@ -6,3 +6,5 @@
 23.220.203.10 a5.mzstatic.com
 218.24.18.6 iosapps.itunes.apple.com
 104.102.145.39 client-api.itunes.apple.com
+
+# todo

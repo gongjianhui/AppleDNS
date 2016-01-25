@@ -1,3 +1,67 @@
+# App Store 图片资源
+a1.mzstatic.com -> a1.da1.akamai.net -> 23.220.203.11 23.77.202.115 23.77.202.112
+新加坡 Akamai
+
+a2.mzstatic.com -> a2.da1.akamai.net -> 23.220.203.17 23.77.202.113 23.77.202.105
+新加坡 Akamai
+
+a3.mzstatic.com -> a3.da1.akamai.net -> 23.220.203.24 23.77.202.104 23.77.202.114
+新加坡 Akamai
+
+a4.mzstatic.com -> a4.da1.akamai.net -> 23.220.203.16 | 140.174.24.211 140.174.25.74
+新加坡 Akamai | SanJose Akamai
+
+a5.mzstatic.com -> a5.da1.akamai.net -> 23.220.203.10 | 140.174.24.178 140.174.24.160
+新加坡 Akamai | SanJose Akamai
+
+# App Store 其他（未知 可能为排名或者搜索）资源
+client-api.itunes.apple.com -> e673.e9.akamaiedge.net -> 104.102.145.39 23.222.76.38
+东京 Akamai SanJose Akamai
+
+search.itunes.apple.com -> e673.e9.akamaiedge.net -> 104.102.145.39 23.222.76.38
+东京 Akamai
+
+su.itunes.apple.com -> e673.a.akamaiedge.net -> 104.70.154.65
+东京 Akamai
+
+se.itunes.apple.com -> e673.a.akamaiedge.net -> 104.70.154.65
+东京 Akamai
+
+s.mzstatic.com -> e905.d.akamaiedge.net -> 104.102.150.28
+东京 Akamai
+
+# App Store App下载
+iosapps.itunes.apple.com -> hpcc-download.cnc.ccgslb.com.cn | app.dlmix.ourdvs.com. 
+（最下方有 IP 列表）
+
+# Apple Music 非音频资源
+is1.mzstatic.com -> a1.da1.akamai.net -> 23.220.203.16
+新加坡 Akamai
+is2.mzstatic.com -> a2.da1.akamai.net -> 23.220.203.9
+新加坡 Akamai
+is3.mzstatic.com -> a3.da1.akamai.net -> 23.220.203.8
+新加坡 Akamai
+play.itunes.apple.com -> e673.e9.akamaiedge.net -> 23.7.137.56 118.215.176.66
+洛杉矶 Akamai | 东京 Akamai
+
+# Apple Music 广播
+radio.itunes.apple.com -> e7542.e9.akamaiedge.net -> e7542.e9.akamaiedge.net -> 96.17.217.22 23.42.69.185
+洛杉矶 Akamai | 东京 Akamai 
+
+radio-services.itunes.apple.com -> e7542.e9.akamaiedge.net -> 96.17.217.22 23.42.69.185
+洛杉矶 Akamai | 东京 Akamai 
+
+radio-activity.itunes.apple.com -> e7542.e9.akamaiedge.net -> 96.17.217.22 23.42.69.185
+洛杉矶 Akamai | 东京 Akamai
+
+init.itunes.apple.com -> e673.e9.akamaiedge.net -> 23.7.137.56
+洛杉矶 Akamai
+
+# Apple Music 音频
+streamingaudio.itunes.apple.com -> app.dlmix.ourdvs.com | hpcc-download.cnc.ccgslb.com.cn
+(IP见最下)
+
+# 其他未知 iTunes 资源
 appldnld.apple.com -> a1271.gi3.akamai.net -> 23.220.203.10 
 新加坡 Akamai
 
@@ -16,100 +80,15 @@ images.apple.com -> a199.cn.w.tl88.net -> 58.218.214.24 58.218.214.11 122.227.10
 itunes.apple.com -> e673.e9.akamaiedge.net -> 23.11.114.217 23.222.76.38 118.215.176.66
 东京 Akamai | SanJose Akamai | 东京 Akamai
 
-## App Store
 
-a1.mzstatic.com -> a1.da1.akamai.net -> 23.220.203.11 23.77.202.115 23.77.202.112
-新加坡 Akamai
-
-a2.mzstatic.com -> a2.da1.akamai.net -> 23.220.203.17 23.77.202.113 23.77.202.105
-新加坡 Akamai
-
-a3.mzstatic.com -> a3.da1.akamai.net -> 23.220.203.24 23.77.202.104 23.77.202.114
-新加坡 Akamai
-
-a4.mzstatic.com -> a4.da1.akamai.net -> 23.220.203.16 | 140.174.24.211 140.174.25.74
-新加坡 Akamai | SanJose Akamai
-
-a5.mzstatic.com -> a5.da1.akamai.net -> 23.220.203.10 | 140.174.24.178 140.174.24.160
-新加坡 Akamai | SanJose Akamai
-
-iosapps.itunes.apple.com -> hpcc-download.cnc.ccgslb.com.cn -> 218.24.18.6 | 222.163.199.73 | 218.60.108.138 | 218.24.18.6
+# hpcc-download.cnc.ccgslb.com.
+218.24.18.6 | 222.163.199.73 | 218.60.108.138 | 218.24.18.6
 铁岭联通 | 延边朝鲜族自治州联通 | 大连联通 | 铁岭联通
-
-iosapps.itunes.apple.com -> app.dlmix.ourdvs.com. -> 115.231.74.147
+# app.dlmix.ourdvs.com.
+115.231.74.147 115.231.74.144 
 浙江嘉兴电信
 183.131.116.56 183.131.119.99 183.131.124.98 183.131.124.99 183.131.168.133 183.131.168.138 183.131.168.141 183.131.192.80 
 183.131.116.56 183.131.119.99 183.131.124.98 183.131.124.99 183.131.168.133 183.131.168.138 183.131.168.141 183.131.192.80 183.134.10.87 183.134.11.84 183.134.11.85 183.134.12.72 183.134.12.74 183.134.12.75
 台州电信 | 嘉兴电信
-115.231.74.144 122.228.237.167 122.228.233.203 122.228.237.170
-嘉兴电信 | 温州电信
-122.228.233.205 122.228.237.167 122.228.237.169 122.228.237.170 183.134.9.60 183.134.9.61 115.231.171.46 115.231.20.48 115.231.30.107 115.231.74.144 115.231.74.147 115.231.87.128 122.228.233.199 122.228.233.203 122.228.233.204
+122.228.237.167 122.228.233.203 122.228.237.170 122.228.233.205 122.228.237.167 122.228.237.169 122.228.237.170 183.134.9.60 183.134.9.61 115.231.171.46 115.231.20.48 115.231.30.107 115.231.74.144 115.231.74.147 115.231.87.128 122.228.233.199 122.228.233.203 122.228.233.204
 温州电信 | 嘉兴电信 | 嘉兴电信 | 温州电信
-
-
-client-api.itunes.apple.com -> e673.e9.akamaiedge.net -> 104.102.145.39 23.222.76.38
-东京 Akamai SanJose Akamai
-
-search.itunes.apple.com -> e673.e9.akamaiedge.net -> 104.102.145.39 23.222.76.38
-东京 Akamai
-
-su.itunes.apple.com -> e673.a.akamaiedge.net -> 104.70.154.65
-东京 Akamai
-
-se.itunes.apple.com -> e673.a.akamaiedge.net -> 104.70.154.65
-东京 Akamai
-
-s.mzstatic.com -> e905.d.akamaiedge.net -> 104.102.150.28
-东京 Akamai
-
-## Apple Music
-is1.mzstatic.com -> a1.da1.akamai.net -> 23.220.203.16
-新加坡 Akamai
-
-is2.mzstatic.com -> a2.da1.akamai.net -> 23.220.203.9
-新加坡 Akamai
-
-is3.mzstatic.com -> a3.da1.akamai.net -> 23.220.203.8
-新加坡 Akamai
-
-radio.itunes.apple.com -> e7542.e9.akamaiedge.net -> e7542.e9.akamaiedge.net -> 96.17.217.22 23.42.69.185
-洛杉矶 Akamai | 东京 Akamai 
-
-radio-services.itunes.apple.com -> e7542.e9.akamaiedge.net -> 96.17.217.22 23.42.69.185
-洛杉矶 Akamai | 东京 Akamai 
-
-radio-activity.itunes.apple.com -> e7542.e9.akamaiedge.net -> 96.17.217.22 23.42.69.185
-洛杉矶 Akamai | 东京 Akamai
-
-init.itunes.apple.com -> e673.e9.akamaiedge.net -> 23.7.137.56
-洛杉矶 Akamai
-
-streamingaudio.itunes.apple.com -> app.dlmix.ourdvs.com ->115.231.74.147
-浙江嘉兴电信
-183.131.116.56 183.131.119.99 183.131.124.98 183.131.124.99 183.131.168.133 183.131.168.138 183.131.168.141 183.131.192.80 
-183.131.116.56 183.131.119.99 183.131.124.98 183.131.124.99 183.131.168.133 183.131.168.138 183.131.168.141 183.131.192.80 183.134.10.87 183.134.11.84 183.134.11.85 183.134.12.72 183.134.12.74 183.134.12.75
-台州电信 | 嘉兴电信
-115.231.74.144 122.228.237.167 122.228.233.203 122.228.237.170
-嘉兴电信 | 温州电信
-122.228.233.205 122.228.237.167 122.228.237.169 122.228.237.170 183.134.9.60 183.134.9.61 115.231.171.46 115.231.20.48 115.231.30.107 115.231.74.144 115.231.74.147 115.231.87.128 122.228.233.199 122.228.233.203 122.228.233.204
-温州电信 | 嘉兴电信 | 嘉兴电信 | 温州电信
-
-streamingaudio.itunes.apple.com -> hpcc-download.cnc.ccgslb.com.cn -> 218.60.47.145 218.24.18.6
-大连联通 | 铁岭联通
-streamingaudio.itunes.apple.com -> app.dlmix.ourdvs.com ->
-115.231.74.147
-浙江嘉兴电信
-183.131.116.56 183.131.119.99 183.131.124.98 183.131.124.99 183.131.168.133 183.131.168.138 183.131.168.141 183.131.192.80 
-183.131.116.56 183.131.119.99 183.131.124.98 183.131.124.99 183.131.168.133 183.131.168.138 183.131.168.141 183.131.192.80 183.134.10.87 183.134.11.84 183.134.11.85 183.134.12.72 183.134.12.74 183.134.12.75
-台州电信 | 嘉兴电信
-115.231.74.144 122.228.237.167 122.228.233.203 122.228.237.170
-嘉兴电信 | 温州电信
-122.228.233.205 122.228.237.167 122.228.237.169 122.228.237.170 183.134.9.60 183.134.9.61 115.231.171.46 115.231.20.48 115.231.30.107 115.231.74.144 115.231.74.147 115.231.87.128 122.228.233.199 122.228.233.203 122.228.233.204
-温州电信 | 嘉兴电信 | 嘉兴电信 | 温州电信
-
-play.itunes.apple.com -> e673.e9.akamaiedge.net -> 23.7.137.56 118.215.176.66
-洛杉矶 Akamai | 东京 Akamai
-
-
-
-
