@@ -1,4 +1,5 @@
 # App Store 图片资源
+<<<<<<< HEAD
 a1.mzstatic.com -> a1.da1.akamai.net
 
 a2.mzstatic.com -> a2.da1.akamai.net
@@ -22,11 +23,44 @@ se.itunes.apple.com -> e673.a.akamaiedge.net -> 104.102.145.39 23.222.76.38 23.2
 
 s.mzstatic.com -> e905.d.akamaiedge.net -> 104.102.150.28 23.213.34.133
 日本 Akamai 
+=======
+a1.mzstatic.com -> a1.da1.akamai.net -> 23.220.203.11 23.77.202.115 23.77.202.112
+新加坡 Akamai 42.99.128.137 42.99.128.155 东京 Akamai
+
+a2.mzstatic.com -> a2.da1.akamai.net -> 23.220.203.17 23.77.202.113 23.77.202.105
+新加坡 Akamai 42.99.128.147 42.99.128.138
+
+a3.mzstatic.com -> a3.da1.akamai.net -> 23.220.203.24 23.77.202.104 23.77.202.114
+新加坡 Akamai 42.99.128.139 42.99.128.136
+
+a4.mzstatic.com -> a4.da1.akamai.net -> 23.220.203.16 | 140.174.24.211 140.174.25.74
+新加坡 Akamai | SanJose Akamai 42.99.128.144 42.99.128.152
+
+a5.mzstatic.com -> a5.da1.akamai.net -> 23.220.203.10 | 140.174.24.178 140.174.24.160
+新加坡 Akamai | SanJose Akamai 42.99.128.136 42.99.128.162
+
+# App Store 其他（未知 可能为排名或者搜索）资源
+client-api.itunes.apple.com -> e673.e9.akamaiedge.net -> 104.102.145.39 23.11.114.217 118.215.176.66 东京 Akamai
+23.222.76.38 23.213.31.53 SanJose Akamai
+
+search.itunes.apple.com -> e673.e9.akamaiedge.net -> 104.102.145.39 23.11.114.217 118.215.176.66 东京 Akamai
+23.222.76.38 23.213.31.53 SanJose Akamai
+
+su.itunes.apple.com -> e673.a.akamaiedge.net -> 104.102.145.39 23.222.76.38 23.213.31.53
+东京 Akamai
+
+se.itunes.apple.com -> e673.a.akamaiedge.net -> 104.102.145.39 23.222.76.38 23.213.31.53
+东京 Akamai
+
+s.mzstatic.com -> e905.d.akamaiedge.net -> 104.102.150.28 23.213.34.133
+东京 Akamai 
+>>>>>>> origin/master
 
 # App Store App下载
 iosapps.itunes.apple.com -> hpcc-download.cnc.ccgslb.com.cn | app.dlmix.ourdvs.com.
 
 # Apple Music 非音频资源
+<<<<<<< HEAD
 is1.mzstatic.com -> a1.da1.akamai.net 
 is2.mzstatic.com -> a2.da1.akamai.net
 is3.mzstatic.com -> a3.da1.akamai.net
@@ -34,6 +68,17 @@ is4.mzstatic.com -> a4.da1.akamai.net
 is5.mzstatic.com -> a5.da1.akamai.net
 
 play.itunes.apple.com -> e673.e9.akamaiedge.net
+=======
+is1.mzstatic.com -> a1.da1.akamai.net -> 23.220.203.11 23.77.202.115 23.77.202.112
+新加坡 Akamai 42.99.128.137 42.99.128.155 东京 Akamai
+is2.mzstatic.com -> a2.da1.akamai.net -> 23.220.203.17 23.77.202.113 23.77.202.105
+新加坡 Akamai 42.99.128.147 42.99.128.138
+is3.mzstatic.com -> a3.da1.akamai.net -> 23.220.203.24 23.77.202.104 23.77.202.114
+新加坡 Akamai 42.99.128.139 42.99.128.136
+
+play.itunes.apple.com -> e673.e9.akamaiedge.net -> 104.102.145.39 23.11.114.217 118.215.176.66 东京 Akamai
+23.222.76.38 23.213.31.53 SanJose Akamai
+>>>>>>> origin/master
 
 # Apple Music 广播
 radio.itunes.apple.com -> e7542.e9.akamaiedge.net
@@ -42,8 +87,13 @@ radio-services.itunes.apple.com -> e7542.e9.akamaiedge.net
 
 radio-activity.itunes.apple.com -> e7542.e9.akamaiedge.net 
 
+<<<<<<< HEAD
 init.itunes.apple.com -> e673.e9.akamaiedge.net
 
+=======
+init.itunes.apple.com -> e673.e9.akamaiedge.net -> 104.102.145.39 23.11.114.217 118.215.176.66 东京 Akamai
+23.222.76.38 23.213.31.53 SanJose Akamai
+>>>>>>> origin/master
 # Apple Music 音频
 streamingaudio.itunes.apple.com -> app.dlmix.ourdvs.com | hpcc-download.cnc.ccgslb.com.cn
 
@@ -62,6 +112,7 @@ swdist.apple.com -> e5977.e9.akamaiedge.net -> 23.44.162.45 日本 Akamai 23.222
 images.apple.com -> a199.cn.w.tl88.net -> 58.218.214.24 58.218.214.11 江苏徐州电信 122.227.101.72 122.227.101.80
 浙江衢州电信
 
+<<<<<<< HEAD
 itunes.apple.com -> e673.e9.akamaiedge.net
 
 # 北方蓝讯 ChinaCache 联通：hpcc-download.cnc.ccgslb.com. （Ping 测试中出现不响应问题，慎用）
@@ -141,3 +192,22 @@ itunes.apple.com -> e673.e9.akamaiedge.net
 台湾 184.28.66.196
 韩国 23.12.230.116 59.151.173.69
 日本 23.42.69.185 23.218.34.114 104.78.97.198
+=======
+itunes.apple.com -> e673.e9.akamaiedge.net -> 104.102.145.39 23.11.114.217 118.215.176.66 东京 Akamai
+23.222.76.38 23.213.31.53 SanJose Akamai
+# hpcc-download.cnc.ccgslb.com.
+218.24.18.6 | 222.163.199.73 | 218.60.108.138 | 218.24.18.6
+铁岭联通 | 延边朝鲜族自治州联通 | 大连联通 | 铁岭联通
+
+# app.dlmix.ourdvs.com.
+
+183.131.116.56 183.131.119.99 183.131.124.98 183.131.124.99 183.131.168.133 183.131.168.138 183.131.168.141 183.131.192.80
+183.131.116.56 183.131.119.99 183.131.124.98 183.131.124.99 183.131.168.133 183.131.168.138 183.131.168.141 183.131.192.80 台州电信
+
+115.231.74.147 115.231.74.144 183.134.9.60 183.134.9.61 115.231.171.46 115.231.20.48 115.231.30.107 115.231.74.144 115.231.74.147 115.231.87.128 183.134.10.87 183.134.11.84 183.134.11.85 183.134.12.72 183.134.12.74 183.134.12.75
+ 嘉兴电信
+
+122.228.237.167 122.228.233.203 122.228.237.170 122.228.233.205 122.228.237.167 122.228.237.169 122.228.237.170 122.228.233.199 122.228.233.203 122.228.233.204 温州电信
+
+
+>>>>>>> origin/master
