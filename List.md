@@ -13,7 +13,7 @@ se.itunes.apple.com -> e673.a.akamaiedge.net -> 104.102.145.39 23.222.76.38 23.2
 s.mzstatic.com -> e905.d.akamaiedge.net -> 104.102.150.28 23.213.34.133
 日本 Akamai 
 
-## a 为 iOS 图片资源、is 为桌面端图片资源
+## App Store / iTunes Store / Apple Music 图片izyuan
 
 a1.mzstatic.com | is1.mzstatic.com-> a1.da1.akamai.net
 
@@ -45,12 +45,12 @@ init.itunes.apple.com -> e673.e9.akamaiedge.net
 
 # Apple Music 音频
 
-streamingaudio.itunes.apple.com -> app.dlmix.ourdvs.com | hpcc-download.cnc.ccgslb.com.cn (后者慎用)
+streamingaudio.itunes.apple.com -> app.dlmix.ourdvs.com | hpcc-download.cnc.ccgslb.com.cn
 
-aod.itunes.apple.com -> app.dlmix.ourdvs.com | hpcc-download.cnc.ccgslb.com.cn (后者慎用)
+aod.itunes.apple.com -> app.dlmix.ourdvs.com | hpcc-download.cnc.ccgslb.com.cn
 
 # App Store App下载
-iosapps.itunes.apple.com -> app.dlmix.ourdvs.com |hpcc-download.cnc.ccgslb.com.cn (后者慎用)
+iosapps.itunes.apple.com -> app.dlmix.ourdvs.com |hpcc-download.cnc.ccgslb.com.cn 
 
 # 其他未知 iTunes 资源
 
@@ -106,7 +106,9 @@ itunes.apple.com -> e673.e9.akamaiedge.net
 
 江苏泰州 221.230.141.219 58.222.19.42
 
-江苏扬州（下一个 App 续一秒）：180.97.178.61	 58.220.44.172 58.220.44.175
+江苏扬州（下一个 App 续一秒）180.97.178.61	 58.220.44.172 58.220.44.175
+
+上海移动 117.144.227.97
 
 福建 36.250.76.67 36.250.240.96 36.250.248.65 175.43.124.197175.43.124.205 175.43.124.244
 
