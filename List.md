@@ -10,8 +10,6 @@ su.itunes.apple.com -> e673.a.akamaiedge.net -> 104.102.145.39 23.222.76.38 23.2
 se.itunes.apple.com -> e673.a.akamaiedge.net -> 104.102.145.39 23.222.76.38 23.213.31.53
 日本 Akamai
 
-se2.itunes.apple.com
-
 s.mzstatic.com -> e905.d.akamaiedge.net -> 104.102.150.28 23.213.34.133
 日本 Akamai 
 
@@ -30,7 +28,7 @@ a5.mzstatic.com | is5.mzstatic.com-> a5.da1.akamai.net
 # 验证服务器
 play.itunes.apple.com -> e673.e9.akamaiedge.net
 
-upp.itunes.apple.com
+upp.itunes.apple.com -> e673.e9.akamaiedge.net
 
 client-api.itunes.apple.com -> e673.e9.akamaiedge.net
 
