@@ -13,9 +13,10 @@ se.itunes.apple.com -> e673.a.akamaiedge.net -> 104.102.145.39 23.222.76.38 23.2
 s.mzstatic.com -> e905.d.akamaiedge.net -> 104.102.150.28 23.213.34.133
 日本 Akamai 
 
-## App Store / iTunes Store / Apple Music 图片izyuan
+## App Store / iTunes Store / Apple Music 图片资源
 
 (共5条)a1-a5.mzstatic.com -> a1-a5.da1.akamai.net（境外） or cc00123.h.cnc.ccgslb.com.cn 
+
 (共5条)is1-is5.mzstatic.com -> a1-a5.da1.akamai.net（境外） orapple.xdwscache.ourglb0.com
 
 # 验证服务器
