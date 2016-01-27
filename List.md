@@ -15,15 +15,8 @@ s.mzstatic.com -> e905.d.akamaiedge.net -> 104.102.150.28 23.213.34.133
 
 ## App Store / iTunes Store / Apple Music 图片izyuan
 
-a1.mzstatic.com | is1.mzstatic.com-> a1.da1.akamai.net cc00123.h.cnc.ccgslb.com.cn apple.xdwscache.ourglb0.com.
-
-a2.mzstatic.com | is2.mzstatic.com-> a2.da1.akamai.net cc00123.h.cnc.ccgslb.com.cn apple.xdwscache.ourglb0.com.
-
-a3.mzstatic.com | is3.mzstatic.com-> a3.da1.akamai.net cc00123.h.cnc.ccgslb.com.cn apple.xdwscache.ourglb0.com.
-
-a4.mzstatic.com | is4.mzstatic.com-> a4.da1.akamai.net cc00123.h.cnc.ccgslb.com.cn apple.xdwscache.ourglb0.com.
-
-a5.mzstatic.com | is5.mzstatic.com-> a5.da1.akamai.net cc00123.h.cnc.ccgslb.com.cn apple.xdwscache.ourglb0.com.
+(共5条)a1-a5.mzstatic.com -> a1-a5.da1.akamai.net（境外） or cc00123.h.cnc.ccgslb.com.cn 
+(共5条)is1-is5.mzstatic.com -> a1-a5.da1.akamai.net（境外） orapple.xdwscache.ourglb0.com
 
 # 验证服务器
 play.itunes.apple.com -> e673.e9.akamaiedge.net
