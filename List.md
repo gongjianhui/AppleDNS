@@ -50,7 +50,7 @@ iosapps.itunes.apple.com -> app.dlmix.ourdvs.com |hpcc-download.cnc.ccgslb.com.c
 
 itunes.apple.com -> e673.e9.akamaiedge.net
 
-# 北方蓝讯 ChinaCache 联通：hpcc-download.cnc.ccgslb.com. （Ping 测试中出现不响应问题，慎用）
+# 北方蓝讯 ChinaCache 联通：hpcc-download.cnc.ccgslb.com. (Ping 测试有异常，请慎用)
 北京 220.250.64.18 220.250.64.26 220.250.64.225
 
 山东济南 125.211.213.131 123.129.254.17
