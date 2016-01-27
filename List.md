@@ -1,18 +1,8 @@
-# App Store 图片资源
-a1.mzstatic.com -> a1.da1.akamai.net
-
-a2.mzstatic.com -> a2.da1.akamai.net
-
-a3.mzstatic.com -> a3.da1.akamai.net
-
-a4.mzstatic.com -> a4.da1.akamai.net
-
-a5.mzstatic.com -> a5.da1.akamai.net
-
-# App Store 其他（未知 可能为排名或者搜索）资源
-client-api.itunes.apple.com -> e673.e9.akamaiedge.net
+# 搜索、文字图片等小型静态资源
 
 search.itunes.apple.com -> e673.e9.akamaiedge.net
+
+apps.itunes.apple.com. -> e905.d.akamaiedge.net.
 
 su.itunes.apple.com -> e673.a.akamaiedge.net -> 104.102.145.39 23.222.76.38 23.213.31.53
 日本 Akamai
@@ -20,24 +10,29 @@ su.itunes.apple.com -> e673.a.akamaiedge.net -> 104.102.145.39 23.222.76.38 23.2
 se.itunes.apple.com -> e673.a.akamaiedge.net -> 104.102.145.39 23.222.76.38 23.213.31.53
 日本 Akamai
 
+se2.itunes.apple.com
+
 s.mzstatic.com -> e905.d.akamaiedge.net -> 104.102.150.28 23.213.34.133
 日本 Akamai 
 
-# App Store App下载
-iosapps.itunes.apple.com -> hpcc-download.cnc.ccgslb.com.cn | app.dlmix.ourdvs.com.
+a1.mzstatic.com | is1.mzstatic.com-> a1.da1.akamai.net
 
-# Apple Music 非音频资源
-is1.mzstatic.com -> a1.da1.akamai.net 
+a2.mzstatic.com | is2.mzstatic.com-> a2.da1.akamai.net
 
-is2.mzstatic.com -> a2.da1.akamai.net
+a3.mzstatic.com | is3.mzstatic.com-> a3.da1.akamai.net
 
-is3.mzstatic.com -> a3.da1.akamai.net
+a4.mzstatic.com | is4.mzstatic.com-> a4.da1.akamai.net
 
-is4.mzstatic.com -> a4.da1.akamai.net
+a5.mzstatic.com | is5.mzstatic.com-> a5.da1.akamai.net
 
-is5.mzstatic.com -> a5.da1.akamai.net
-
+# 验证服务器
 play.itunes.apple.com -> e673.e9.akamaiedge.net
+
+upp.itunes.apple.com
+
+client-api.itunes.apple.com -> e673.e9.akamaiedge.net
+
+
 
 # Apple Music 广播
 radio.itunes.apple.com -> e7542.e9.akamaiedge.net
@@ -49,22 +44,15 @@ radio-activity.itunes.apple.com -> e7542.e9.akamaiedge.net
 init.itunes.apple.com -> e673.e9.akamaiedge.net
 
 # Apple Music 音频
-streamingaudio.itunes.apple.com -> app.dlmix.ourdvs.com | hpcc-download.cnc.ccgslb.com.cn
+
+streamingaudio.itunes.apple.com -> app.dlmix.ourdvs.com | hpcc-download.cnc.ccgslb.com.cn (后者慎用)
+
+aod.itunes.apple.com -> app.dlmix.ourdvs.com | hpcc-download.cnc.ccgslb.com.cn (后者慎用)
+
+# App Store App下载
+iosapps.itunes.apple.com -> app.dlmix.ourdvs.com |hpcc-download.cnc.ccgslb.com.cn (后者慎用)
 
 # 其他未知 iTunes 资源
-appldnld.apple.com -> a1271.gi3.akamai.net -> 23.220.203.10
-新加坡 Akamai
-
-supportdownload.apple.com -> a781.ce.w.tl88.net -> 122.227.101.83
-浙江衢州电信
-
-swcdn.apple.com -> a1271.gi3.akamai.net -> 140.174.25.65 140.174.24.171 23.77.202.113 23.77.202.115
-新加坡 Akamai
-
-swdist.apple.com -> e5977.e9.akamaiedge.net -> 23.44.162.45 日本 Akamai 23.222.77.240  SanJose Akamai
-
-images.apple.com -> a199.cn.w.tl88.net -> 58.218.214.24 58.218.214.11 江苏徐州电信 122.227.101.72 122.227.101.80
-浙江衢州电信
 
 itunes.apple.com -> e673.e9.akamaiedge.net
 
