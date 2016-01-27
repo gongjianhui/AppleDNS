@@ -15,9 +15,9 @@ s.mzstatic.com -> e905.d.akamaiedge.net -> 104.102.150.28 23.213.34.133
 
 ## App Store / iTunes Store / Apple Music 图片资源
 
-(共5条)a1-a5.mzstatic.com -> a1-a5.da1.akamai.net（境外） or cc00123.h.cnc.ccgslb.com.cn 
+(共5条)a1-a5.mzstatic.com -> a1-a5.da1.akamai.net（境外） | cc00123.h.cnc.ccgslb.com.cn 
 
-(共5条)is1-is5.mzstatic.com -> a1-a5.da1.akamai.net（境外） orapple.xdwscache.ourglb0.com
+(共5条)is1-is5.mzstatic.com -> a1-a5.da1.akamai.net（境外）| orapple.xdwscache.ourglb0.com
 
 # 验证服务器
 play.itunes.apple.com -> e673.e9.akamaiedge.net
@@ -35,7 +35,7 @@ radio-services.itunes.apple.com -> e7542.e9.akamaiedge.net
 
 radio-activity.itunes.apple.com -> e7542.e9.akamaiedge.net 
 
-init.itunes.apple.com -> e673.e9.akamaiedge.net
+init.itunes.apple.com -> e673.e9.akamaiedge.net | apple.https.cnc.ccgslb.com.cn.
 
 # Apple Music 音频
 
@@ -193,6 +193,36 @@ itunes.apple.com -> e673.e9.akamaiedge.net
 广西 222.218.45.208
 
 云南 116.55.236.45
+
+# apple.https.cnc.ccgslb.com.cn
+吉林 139.209.89.159
+
+辽宁 218.24.17.29 218.60.45.30 218.60.107.157 123.94.9.136	
+
+内蒙古 60.31.194.14
+
+北京 111.202.73.180 221.179.182.175（移动）
+
+天津 221.238.197.46 125.39.78.24 125.39.78.154
+
+河北 61.240.136.68 60.6.197.202 101.26.38.32 211.90.30.80 211.90.28.31
+
+河南 182.118.77.18 182.118.77.164 182.118.77.165	 202.110.80.5
+
+山东 218.58.209.14 119.188.139.200
+
+山西 121.30.192.84 121.30.192.85
+
+陕西 120.192.246.115（移动）
+
+江苏 112.25.57.13 112.25.57.112
+
+浙江 111.1.23.215（移动）60.12.50.6（联通）
+
+江西 117.169.22.15（移动）
+
+广东 112.90.90.5 112.90.147.150 112.90.148.152 112.90.148.153 112.90.90.156 163.177.135.20
+
 
 
 # a1.da1.akamai.net 
