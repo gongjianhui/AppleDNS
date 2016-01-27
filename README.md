@@ -8,9 +8,9 @@ Apple Music （不包括 iCloud 音乐资料库中的私有内容）音频加载
 # Surge 配置
 在配置文件最下方添加，IP请在 List.md 文件中查找
 
-
-[Host]
 ```
+[Host]
+
 e7542.e9.akamaiedge.net = 
 
 a1.mzstatic.com = 
