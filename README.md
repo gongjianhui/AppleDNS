@@ -58,7 +58,7 @@ radio-activity.itunes.apple.com
 client-api.itunes.apple.com
 ```
 
-## 如果你觉得这个项目帮助到你了，来给我打点钱被？
+## 如果你觉得这个项目帮助到你了，来给我打点钱呗？
 ## 支付裱: i@gongjianhui.com
 ## BTC: 1Jianhui1ZUDHDCz1TGzGH2rWaxas1GS9S
 
