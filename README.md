@@ -1,12 +1,12 @@
 # 配置说明
-**在域名对应的 IP 中选择离你最近的，或者运营商类似的，配置在路由器上的 hosts 或者自有 DNS 上即可。**
+**在域名对应的 IP 中选择离你最近的，或者运营商类似的，配置在 Surge、路由器（或 Mac）的 hosts 或者自有 DNS 上即可。**
 如果 App 下载速度慢，配置 iosapps.itunes.apple.com<br>
 Apple Music （不包括 iCloud 音乐资料库中的私有内容）音频加载慢配置 streamingaudio.itunes.apple.com
 
 # 由于数据采集方式的原因，可能会有一部分 IP 无法使用，请测试后再部署
 
 # Surge 配置
-在配置文件最下方添加，IP请在 List.md 文件中查找
+在配置文件最下方添加，IP请在 List.md 文件中查找，一组可以使用一个 IP。
 
 ```
 [Host]
@@ -58,9 +58,10 @@ radio-activity.itunes.apple.com
 client-api.itunes.apple.com
 ```
 
-## 如果你觉得这个项目帮助到你了，来给我打点钱呗？
-## 支付裱: i@gongjianhui.com
-## BTC: 1Jianhui1ZUDHDCz1TGzGH2rWaxas1GS9S
+## 给我资持，大家资不资磁？
+### 支付裱: i@gongjianhui.com
+![](https://ooo.0o0.ooo/2016/01/28/56aaef6758139.jpg)
+### BTC: 1Jianhui1ZUDHDCz1TGzGH2rWaxas1GS9S
 
 
 
