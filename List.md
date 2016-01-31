@@ -4,14 +4,11 @@ search.itunes.apple.com -> e673.e9.akamaiedge.net
 
 apps.itunes.apple.com. -> e905.d.akamaiedge.net.
 
-su.itunes.apple.com -> e673.a.akamaiedge.net -> 104.102.145.39 23.222.76.38 23.213.31.53
-日本 Akamai
+su.itunes.apple.com -> e673.a.akamaiedge.net
 
-se.itunes.apple.com -> e673.a.akamaiedge.net -> 104.102.145.39 23.222.76.38 23.213.31.53
-日本 Akamai
+se.itunes.apple.com -> e673.a.akamaiedge.net 
 
-s.mzstatic.com -> e905.d.akamaiedge.net -> 104.102.150.28 23.213.34.133
-日本 Akamai 
+s.mzstatic.com -> e905.d.akamaiedge.net
 
 ## App Store / iTunes Store / Apple Music 图片资源
 
@@ -49,6 +46,18 @@ iosapps.itunes.apple.com -> app.dlmix.ourdvs.com |hpcc-download.cnc.ccgslb.com.c
 # 其他未知 iTunes 资源
 
 itunes.apple.com -> e673.e9.akamaiedge.net
+
+# e673.a.akamaiedge.net 
+香港 23.50.17.214 23.198.133.66 60.254.170.217 
+
+台湾 184.86.234.120
+
+东京 23.2.130.217 23.11.114.217	
+
+# e905.d.akamaiedge.net 
+台湾 23.48.141.242
+日本 104.70.135.100 104.102.150.28 23.213.34.133 23.66.95.170
+澳 122.252.43.205
 
 # 北方蓝讯 ChinaCache 联通：hpcc-download.cnc.ccgslb.com. 
 北京 220.250.64.18 220.250.64.26 220.250.64.225
