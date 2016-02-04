@@ -21,6 +21,21 @@
 
 新加坡 23.10.18.225
 
+## radio.itunes.apple.com radio-services.itunes.apple.com radio-activity.itunes.apple.com
+香港 104.89.141.101 184.87.100.246
+
+台湾 184.28.66.196
+
+韩国 23.12.230.116 59.151.173.69
+
+日本 23.42.69.185 23.218.34.114 104.78.97.198
+
+
+## 如果您的 Surge 代理质量够好，请在 [Rule] 中添加一条
+```
+IP-CIDR,17.173.66.0/22,Proxy
+```
+
 # App Store / iTunes Store / Apple Music 图片资源
 
 ## a1-a5.mzstatic.com（5个二级域名）
@@ -146,4 +161,4 @@
 
 广西 171.107.84.9 171.107.84.25 171.107.190.15 171.107.190.17 222.84.189.12 222.84.189.16
 
-### TODO: s.mzstatic.com p44-buy.itunes.apple.com
+### TODO: s.mzstatic.com 
