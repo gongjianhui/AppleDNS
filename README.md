@@ -37,6 +37,11 @@ radio-activity.itunes.apple.com =
 
 client-api.itunes.apple.com = 
 ```
+另外，如果您的 Surge 代理质量足够好，建议在 Rule 中添加一条
+```
+IP-CIDR,17.173.66.0/22,Proxy
+```
+
 # hosts 配置
 例：IP Domain
 ```
