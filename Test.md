@@ -22,3 +22,11 @@ http://a3.mzstatic.com/us/r30/Purple3/v4/dd/0c/ef/dd0cefa2-d257-ef80-42c9-0ab703
 http://a4.mzstatic.com/us/r30/Features6/v4/c2/2d/1a/c22d1aad-9eb3-136a-2450-c51f4757b80d/flowcase_410_200_2x.jpeg
 
 http://a5.mzstatic.com/us/r30/Features69/v4/2f/d7/c3/2fd7c3c0-c509-d404-1c65-081af0b8f0c2/image-410x200.jpeg
+
+# Mac App Store 下载测试
+http://osxapps.itunes.apple.com/apple-assets-us-std-000001/Purple69/v4/e8/11/8f/e8118f3a-7c0e-2bf2-ca7b-719c90d4ffcb/encrypted7964864115230786182.pkg
+（无需安装也无法安装）
+
+
+
+（在浏览器中测试，可下载即可用，可以多测试几个 IP 以获得最佳体验。）
