@@ -13,8 +13,6 @@ Apple Music （不包括 iCloud 音乐资料库中的私有内容）音频加载
 ```
 [Host]
 
-e7542.e9.akamaiedge.net = 
-
 a1.mzstatic.com = 
 a2.mzstatic.com = 
 a3.mzstatic.com = 
@@ -45,7 +43,6 @@ IP-CIDR,17.173.66.0/22,Proxy
 # hosts 配置
 例：IP Domain
 ```
-e7542.e9.akamaiedge.net
 a1.mzstatic.com 
 a2.mzstatic.com
 a3.mzstatic.com
