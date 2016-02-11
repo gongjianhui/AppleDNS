@@ -35,9 +35,9 @@ radio-activity.itunes.apple.com =
 
 client-api.itunes.apple.com = 
 ```
-另外，如果您的 Surge 代理质量足够好，建议在 Rule 中添加一条
+另外，如果您的 Surge 代理屌炸天，建议在 Rule 中添加一条
 ```
-IP-CIDR,17.173.66.0/22,Proxy
+IP-CIDR,17.0.0.0/8,Proxy
 ```
 
 # hosts 配置
@@ -64,7 +64,6 @@ client-api.itunes.apple.com
 
 ## 给我资持，大家资不资磁？
 ### 支付裱: i@gongjianhui.com
-![](https://ooo.0o0.ooo/2016/01/28/56aaef6758139.jpg)
 ### BTC: 1Jianhui1ZUDHDCz1TGzGH2rWaxas1GS9S
 
 

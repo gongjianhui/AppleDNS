@@ -31,9 +31,9 @@
 日本 23.42.69.185 23.218.34.114 104.78.97.198
 
 
-## 如果您的 Surge 代理质量够好，请在 [Rule] 中添加一条
+## 如果您的 Surge 代理屌炸天，请在 [Rule] 中添加一条
 ```
-IP-CIDR,17.173.66.0/22,Proxy
+IP-CIDR,17.0.0.0/8,Proxy
 ```
 
 # App Store / iTunes Store / Apple Music 图片资源
