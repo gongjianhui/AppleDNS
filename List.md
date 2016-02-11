@@ -1,5 +1,5 @@
 # 验证服务器 + API
-## search.itunes.apple.com play.itunes.apple.com upp.itunes.apple.com client-api.itunes.apple.com init.itunes.apple.com itunes.apple.com
+## 1. search.itunes.apple.com play.itunes.apple.com upp.itunes.apple.com client-api.itunes.apple.com init.itunes.apple.com itunes.apple.com
 
 香港 104.114.184.38 184.87.97.50 60.254.170.217 23.42.189.88 23.198.133.66
 
@@ -11,7 +11,7 @@
 
 印尼 23.9.194.217
 
-## su.itunes.apple.com se.itunes.apple.com
+## 2. su.itunes.apple.com se.itunes.apple.com
 
 香港 23.50.17.214 23.198.133.66 60.254.170.217 
 
@@ -21,7 +21,7 @@
 
 新加坡 23.10.18.225
 
-## radio.itunes.apple.com radio-services.itunes.apple.com radio-activity.itunes.apple.com
+## 3. radio.itunes.apple.com radio-services.itunes.apple.com radio-activity.itunes.apple.com
 香港 104.89.141.101 184.87.100.246
 
 台湾 184.28.66.196
@@ -38,7 +38,7 @@ IP-CIDR,17.173.66.0/22,Proxy
 
 # App Store / iTunes Store / Apple Music 图片资源
 
-## a1-a5.mzstatic.com（5个二级域名）
+## 4. a1-a5.mzstatic.com（5个二级域名）
 
 上海移动 117.144.230.3
 
@@ -62,7 +62,7 @@ IP-CIDR,17.173.66.0/22,Proxy
 
 广东 112.90.148.14 163.177.134.29
 
-## is1-is5.mzstatic.com
+## 5. is1-is5.mzstatic.com
 
 黑龙江 221.206.120.65 
 
@@ -112,7 +112,7 @@ IP-CIDR,17.173.66.0/22,Proxy
 
 # Apple Music 音频 与 App Store 下载 、MAS 下载
 
-## streamingaudio.itunes.apple.com aod.itunes.apple.com  iosapps.itunes.apple.com osxapps.itunes.apple.com
+## 6. streamingaudio.itunes.apple.com aod.itunes.apple.com  iosapps.itunes.apple.com osxapps.itunes.apple.com
 
 
 北京 220.250.64.18 220.250.64.26 220.250.64.225
