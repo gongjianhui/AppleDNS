@@ -1,5 +1,7 @@
 # 配置说明
-**在域名对应的 IP 中选择离你最近的，或者运营商类似的，配置在 Surge、路由器（或 Mac）的 hosts 或者自有 DNS 上即可。**iOS、OS X 以及 Apple Music 访问、下载速度慢请配置 List.md 中第六项。iTunes Store Movie 配置请见 iTunesMovie.md。**
+
+## 在域名对应的 IP 中选择地理位置相近，配置在 Surge、hosts 文件，或者自有 DNS 上即可。
+iOS、OS X 以及 Apple Music 访问、下载速度慢请配置 List.md 中第六项。iTunes Store Movie 配置请见 iTunesMovie.md。
 
 # 由于数据采集方式的原因，可能会有一部分 IP 无法使用，请测试后再部署
 
