@@ -114,7 +114,7 @@ IP-CIDR,17.0.0.0/8,Proxy
 
 # Apple Music 音频 与 App Store 下载 、MAS 下载
 
-## 6. streamingaudio.itunes.apple.com aod.itunes.apple.com  iosapps.itunes.apple.com osxapps.itunes.apple.com
+## 6. streamingaudio.itunes.apple.com aod.itunes.apple.com  iosapps.itunes.apple.com osxapps.itunes.apple.com appldnld.apple.com
 
 
 北京 220.250.64.18 220.250.64.26 220.250.64.225
