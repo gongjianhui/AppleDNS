@@ -1,7 +1,7 @@
 # 配置说明
 
 ## 在域名对应的 IP 中选择地理位置相近，配置在 Surge、hosts 文件，或者自有 DNS 上即可。
-iOS、OS X 以及 Apple Music 访问、下载速度慢请配置 List.md 中第六项。iTunes Store Movie 配置请见 iTunesMovie 文件。
+iOS、OS X 以及 Apple Music 访问、下载速度慢请配置 List.md 中第 5 项。iTunes Store Movie 配置请见 iTunesMovie 文件。
 
 # 由于数据采集方式的原因，可能会有一部分 IP 无法使用，请测试后再部署
 

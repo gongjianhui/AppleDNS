@@ -1,11 +1,11 @@
 # 验证服务器 + API
-## 1. search.itunes.apple.com play.itunes.apple.com upp.itunes.apple.com client-api.itunes.apple.com init.itunes.apple.com itunes.apple.com
+## 1. search.itunes.apple.com play.itunes.apple.com upp.itunes.apple.com client-api.itunes.apple.com init.itunes.apple.com itunes.apple.com su.itunes.apple.com se.itunes.apple.com
 
-香港 104.114.184.38 184.87.97.50 60.254.170.217 23.42.189.88 23.198.133.66
+香港 23.50.17.21460.254.170.217  104.114.184.38 184.87.97.50 60.254.170.217 23.42.189.88 23.198.133.66
 
 台湾 61.220.62.192 61.220.62.197 61.220.62.189 61.220.62.191 184.86.234.120
 
-日本 23.11.114.217 118.215.176.66 23.218.28.29 23.48.12.96 104.70.154.65 104.76.240.90 
+日本 23.2.130.217 23.11.114.217 118.215.176.66 23.218.28.29 23.48.12.96 104.70.154.65 104.76.240.90 
 
 韩国 125.141.136.100
 
@@ -13,24 +13,14 @@
 
 印尼 23.9.194.217
 
-## 2. su.itunes.apple.com se.itunes.apple.com
-
-香港 23.50.17.214 23.198.133.66 60.254.170.217 
-
-台湾 184.86.234.120
-
-东京 23.2.130.217 23.11.114.217
-
-新加坡 23.10.18.225
-
-## 3. radio.itunes.apple.com radio-services.itunes.apple.com radio-activity.itunes.apple.com
-香港 104.89.141.101 184.87.100.246
+## 2. radio.itunes.apple.com radio-services.itunes.apple.com radio-activity.itunes.apple.com
+香港 23.13.185.169 104.89.141.101 184.87.100.246
 
 台湾 184.28.66.196
 
 韩国 23.12.230.116 59.151.173.69
 
-日本 23.42.69.185 23.218.34.114 104.78.97.198
+日本 23.42.69.185 23.59.168.110 23.218.34.114 104.78.97.198
 
 
 ## 如果您的 Surge 代理屌炸天，请在 [Rule] 中添加一条
@@ -40,7 +30,7 @@ IP-CIDR,17.0.0.0/8,Proxy
 
 # App Store / iTunes Store / Apple Music 图片资源
 
-## 4. a1-a5.mzstatic.com（5个二级域名）
+## 3. a1-a5.mzstatic.com（5个二级域名）
 
 上海移动 117.144.230.3
 
@@ -64,7 +54,7 @@ IP-CIDR,17.0.0.0/8,Proxy
 
 广东 112.90.148.14 163.177.134.29
 
-## 5. is1-is5.mzstatic.com
+## 4. is1-is5.mzstatic.com
 
 黑龙江 221.206.120.65 
 
@@ -114,7 +104,7 @@ IP-CIDR,17.0.0.0/8,Proxy
 
 # Apple Music 音频 与 App Store 下载 、MAS 下载
 
-## 6. streamingaudio.itunes.apple.com aod.itunes.apple.com  iosapps.itunes.apple.com osxapps.itunes.apple.com
+## 5. streamingaudio.itunes.apple.com aod.itunes.apple.com  iosapps.itunes.apple.com osxapps.itunes.apple.com
 
 
 北京 220.250.64.18 220.250.64.26 220.250.64.225
