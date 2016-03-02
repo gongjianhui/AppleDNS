@@ -1,30 +1,10 @@
-# 配置说明
+# 全新的 AppleDNS，大快所有人心的好项目。真的快，快出声！
 
-## 在域名对应的 IP 中选择地理位置相近，配置在 Surge、hosts 文件，或者自有 DNS 上即可。
-iOS、OS X 以及 Apple Music 访问、下载速度慢请配置 List.md 中第 5 项。iTunes Store Movie 配置请见 iTunesMovie 文件。
+在 List.md 中选择与您物理位置相对近的 IP 并按照规则填入 Hosts 文件、私有 DNS 配置文件、Surge 配置文件中即可。
 
-# 由于数据采集方式的原因，可能会有一部分 IP 无法使用，请测试后再部署
-
-## 提示：本项目对冷门资源无加速效果。
-
-# Surge 配置
-在配置文件最下方添加，IP请在 List.md 文件中查找，一组可以使用一个 IP。
-
+iOS Surge 配置，在 [Rule] 前后加入以下内容，等号右侧为您在 List.md 中选择的 IP，每组可使用一个 IP（共 5 组）。（您可以参考或可以直接编辑项目中的 surge.conf 文件）
 ```
 [Host]
-
-a1.mzstatic.com = 
-a2.mzstatic.com = 
-a3.mzstatic.com = 
-a4.mzstatic.com = 
-a5.mzstatic.com = 
-
-is1.mzstatic.com = 
-is2.mzstatic.com = 
-is3.mzstatic.com = 
-is4.mzstatic.com = 
-is5.mzstatic.com = 
-
 iosapps.itunes.apple.com = 
 streamingaudio.itunes.apple.com = 
 aod.itunes.apple.com = 
@@ -33,38 +13,45 @@ radio.itunes.apple.com =
 radio-services.itunes.apple.com = 
 radio-activity.itunes.apple.com = 
 
+search.itunes.apple.com = 
+
+init.itunes.apple.com = 
+itunes.apple.com = 
+
+play.itunes.apple.com = 
+upp.itunes.apple.com = 
 client-api.itunes.apple.com = 
-```
-另外，如果您的 Surge 代理屌炸天，建议在 Rule 中添加一条
-```
-IP-CIDR,17.0.0.0/8,Proxy
+su.itunes.apple.com = 
+se.itunes.apple.com = 
+
 ```
 
-# hosts 配置
-例：IP Domain
+# Hosts 配置 您需要按照 [IP 空格 域名] 一行一个的形式配置，每组可使用同样的 IP（共 5 组）
 ```
-a1.mzstatic.com 
-a2.mzstatic.com
-a3.mzstatic.com
-a4.mzstatic.com
-a5.mzstatic.com
-is1.mzstatic.com
-is2.mzstatic.com
-is3.mzstatic.com
-is4.mzstatic.com
-is5.mzstatic.com
 iosapps.itunes.apple.com
+osxapps.itunes.apple.com
 streamingaudio.itunes.apple.com
 aod.itunes.apple.com
+
 radio.itunes.apple.com
 radio-services.itunes.apple.com
 radio-activity.itunes.apple.com
+
+search.itunes.apple.com
+
+init.itunes.apple.com
+itunes.apple.com
+
+play.itunes.apple.com
+upp.itunes.apple.com
 client-api.itunes.apple.com
+su.itunes.apple.com
+se.itunes.apple.com
 ```
 
 ## 给我资持，大家资不资磁？
 ### 支付裱: i@gongjianhui.com
 ### BTC: 1Jianhui1ZUDHDCz1TGzGH2rWaxas1GS9S
 
-
+Apple 和 iTunes 是 Apple Inc. 在美国和其他 国家/地区的注册商标。
 
