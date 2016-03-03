@@ -1,8 +1,9 @@
 # 全新的 AppleDNS，大快所有人心的好项目。真的快，快出声！
 
 在 List.md 中选择与您物理位置相对近的 IP 并按照规则填入 Hosts 文件、私有 DNS 配置文件、Surge 配置文件中即可。
+建议移动用户尽量使用移动 IP。
 
-iOS Surge 配置，在 [Rule] 前后加入以下内容，等号右侧为您在 List.md 中选择的 IP，每组可使用一个 IP（共 5 组）。（您可以参考或可以直接编辑项目中的 surge.conf 文件）
+iOS Surge 配置，在 [Rule] 前加入以下内容，等号右侧为您在 List.md 中选择的 IP，每组可使用一个 IP（共 5 组）。（您可以参考或可以直接编辑项目中的 surge.conf 文件）
 ```
 [Host]
 iosapps.itunes.apple.com = 
