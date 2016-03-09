@@ -26,6 +26,7 @@ su.itunes.apple.com =
 se.itunes.apple.com = 
 
 ```
+如添加后 Apple Music 部分歌曲（尤其是冷门歌曲）仍然加载速度慢，请考虑将 streamingaudio.itunes.apple.com 和 aod.itunes.apple.com 加入你的代理黑名单列表（DOMAIN-SUFFIX,****.itunes.apple.com,Proxy,force-remote-dns）
 
 # Hosts 配置 您需要按照 [IP 空格 域名] 一行一个的形式配置，每组可使用同样的 IP（共 5 组）
 ```
