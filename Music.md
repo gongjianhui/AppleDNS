@@ -1,6 +1,7 @@
+# 下列域名不应出现在 Surge 或者其他代理软件黑名单中，请留意。
+
 # streamingaudio.itunes.apple.com , aod.itunes.apple.com
 ## Apple Music 中国非社会主义区域、资本主义（俗称「墙外」）国家服务器
-
 ### 以下所有服务器均为 Apple 自建，非第三方 CDN 
 ### 若网络运营商国际出口速度不慢(>1Mbps)，强烈推荐使用
 
