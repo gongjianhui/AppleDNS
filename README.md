@@ -1,32 +1,28 @@
 # 全新的 AppleDNS，大快所有人心的好项目。真的快，快出声！
 
 
-感谢 @raptium 提供的自动生成脚本[（Apache License 2.0)](https://gist.github.com/raptium/5a9675667b05529857d4)
+感谢 @raptium 和 @xjbeta 提供的自动生成脚本[（Apache License 2.0)](https://gist.github.com/raptium/5a9675667b05529857d4)
 
 将 autogen.py 和 List.md 下载到本地后在终端中执行
-```
-python autogen.py -f surge /path/to/List.md
-生成 Surge 配置，您需要将 api.itunes.apple.com 更改为 client-api.itunes.apple.com，并在配置头部增加 [Host] （参考项目中 surge.conf）
-python autogen.py -f hosts /path/to/List.md
-生成 Hosts 配置，您需要将 api.itunes.apple.com 更改为 client-api.itunes.apple.com，放入系统 Hosts 配置即可。
-python autogen.py -f merlin /path/to/List.md
-生成 merlin dnsmasq 配置，您需要将 api.itunes.apple.com 更改为 client-api.itunes.apple.com，放入 自定义dnsmasq 即可。
-```
-#### OS X
+
 
 ```
-cd /xxx/AppleDNS
-//surge, 其他设置同上
+cd /path/to/AppleDNS
+// Surge 配置
 python autogen.py -f surge List.md
-//hosts, 其他设置同上
+// Hosts 文件
 python autogen.py -f hosts List.md
-//merlin, 其他设置同上
+// Merlin 固件配置
 python autogen.py -f merlin List.md
-//设置完成后清理DNS缓存效果更佳
-//OS X v10.10.4 或更高版本
+
+// 设置完成后需要清理 DNS 缓存
+// OS X v10.10.4 或更高版本
 sudo killall -HUP mDNSResponder
-//OS X v10.10 至 v10.10.3
+// OS X v10.10 至 v10.10.3
 sudo killall -HUP mDNSResponder
+// Windoge 系统
+ipconfig /flushdns
+
 ```
 
 
