@@ -15,6 +15,8 @@ python autogen.py -f hosts List.md
 // Merlin 固件配置
 python autogen.py -f merlin List.md
 
+// 注意：请将结果中的 api.itunes.apple.com 更改为 client-api.itunes.apple.com
+
 // 设置完成后需要清理 DNS 缓存
 // OS X v10.10.4 或更高版本
 sudo killall -HUP mDNSResponder
