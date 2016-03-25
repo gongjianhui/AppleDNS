@@ -16,13 +16,16 @@ python autogen.py -f merlin /path/to/List.md
 
 ```
 cd /xxx/AppleDNS
-//surge
+//surge, 其他设置同上
 python autogen.py -f surge List.md
-//hosts
+//hosts, 其他设置同上
 python autogen.py -f hosts List.md
-//merlin
+//merlin, 其他设置同上
 python autogen.py -f merlin List.md
-//清理DNS缓存效果更佳
+//设置完成后清理DNS缓存效果更佳
+//OS X v10.10.4 或更高版本
+sudo killall -HUP mDNSResponder
+//OS X v10.10 至 v10.10.3
 sudo killall -HUP mDNSResponder
 ```
 

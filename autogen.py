@@ -83,5 +83,5 @@ if __name__ == '__main__':
     parser.add_argument('input', help='input file, eg. List.md')
     parser.add_argument('-f', dest='format', help='output format',
                         default='surge', choices=['surge', 'hosts', 'merlin'])
-                        args = parser.parse_args()
-                        process_file(args)
+    args = parser.parse_args()
+    process_file(args)
