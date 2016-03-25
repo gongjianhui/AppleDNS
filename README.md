@@ -7,9 +7,28 @@
 ```
 python autogen.py -f surge /path/to/List.md
 生成 Surge 配置，您需要将 api.itunes.apple.com 更改为 client-api.itunes.apple.com，并在配置头部增加 [Host] （参考项目中 surge.conf）
-python autogen.py -f surge /path/to/List.md
+python autogen.py -f hosts /path/to/List.md
 生成 Hosts 配置，您需要将 api.itunes.apple.com 更改为 client-api.itunes.apple.com，放入系统 Hosts 配置即可。
+python autogen.py -f merlin /path/to/List.md
+生成 merlin dnsmasq 配置，您需要将 api.itunes.apple.com 更改为 client-api.itunes.apple.com，放入 自定义dnsmasq 即可。
 ```
+#### OS X
+
+```
+cd /xxx/AppleDNS
+//surge, 其他设置同上
+python autogen.py -f surge List.md
+//hosts, 其他设置同上
+python autogen.py -f hosts List.md
+//merlin, 其他设置同上
+python autogen.py -f merlin List.md
+//设置完成后清理DNS缓存效果更佳
+//OS X v10.10.4 或更高版本
+sudo killall -HUP mDNSResponder
+//OS X v10.10 至 v10.10.3
+sudo killall -HUP mDNSResponder
+```
+
 
 
 手动操作指南：

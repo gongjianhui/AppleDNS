@@ -53,6 +53,8 @@ def output_all(hosts, domains, fmt='surge'):
             print '%s = %s' % (domain, hosts[0])
         elif fmt == 'hosts':
             print '%s\t%s' % (hosts[0], domain)
+        elif fmt == 'merlin':
+            print 'address=/%s/%s' % (domain, hosts[0])
 
 
 def process_file(args):
@@ -80,6 +82,6 @@ if __name__ == '__main__':
     parser = argparse.ArgumentParser()
     parser.add_argument('input', help='input file, eg. List.md')
     parser.add_argument('-f', dest='format', help='output format',
-                        default='surge', choices=['surge', 'hosts'])
+                        default='surge', choices=['surge', 'hosts', 'merlin'])
     args = parser.parse_args()
     process_file(args)
