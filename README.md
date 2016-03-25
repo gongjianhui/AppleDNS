@@ -1,4 +1,5 @@
 # 全新的 AppleDNS，大快所有人心的好项目。真的快，快出声！
+（作者是个 16 岁的穷逼，求捐赠，帐号请拉到页面最下方。）
 
 
 感谢 @raptium 和 @xjbeta 提供的自动生成脚本[（Apache License 2.0)](https://gist.github.com/raptium/5a9675667b05529857d4)
