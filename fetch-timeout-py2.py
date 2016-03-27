@@ -1,4 +1,5 @@
-#!/usr/bin/env python3
+# Author:jannson,CC0
+#!/usr/bin/env python
 import argparse
 import json
 #import multiprocessing
