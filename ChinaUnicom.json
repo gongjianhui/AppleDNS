@@ -4,7 +4,8 @@
             "aod.itunes.apple.com",
             "iosapps.itunes.apple.com",
             "osxapps.itunes.apple.com",
-            "streamingaudio.itunes.apple.com"
+            "streamingaudio.itunes.apple.com",
+            "mvod.itunes.apple.com"
         ],
         "ips": {
             "ChinaUnicom-chinacache": [
