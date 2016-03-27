@@ -30,9 +30,9 @@ sudo killall -HUP mDNSResponder
 ipconfig /flushdns
 
 ```
-## DNSMASQ 用户和 Merlin 用户警告：
+## DNSMASQ 用户和 MERLIN 用户警告：
 请删除配置文件中的 
-address=/itunes.apple.com/<ip address>
+address=/itunes.apple.com/***
 该配置在 DNSMASQ 中意味着将 itunes.apple.com 泛解析！
 
 手动操作指南：请查看 OLD 文件夹。
