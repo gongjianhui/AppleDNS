@@ -1,13 +1,27 @@
+<<<<<<< Updated upstream
 # Author:jannson,CC0
 #!/usr/bin/env python
+=======
+<<<<<<< HEAD
+<<<<<<< HEAD
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+# Author: jannson, CC0
+=======
+# Author:jannson,CC0
+#!/usr/bin/env python
+>>>>>>> origin/master
+=======
+# Author:jannson,CC0
+#!/usr/bin/env python
+>>>>>>> origin/master
+>>>>>>> Stashed changes
 import argparse
 import json
-#import multiprocessing
 from datetime import datetime
 import itertools
 
 timeout = 400  # unit ms
-concurrent = 10
 testing_times = 10
 
 
@@ -15,9 +29,9 @@ def check_requirements():
     import sys
 
     def check_python_version():
-        #if sys.hexversion <= 0x3040000:
-        #    print('your "python" lower than 3.4.0 upgrade.')
-        #    return False
+        if sys.hexversion <= 0x2070000:
+            print('your "python" lower than 2.7.0 upgrade.')
+            return False
         return True
 
     def check_is_use_proxy():
@@ -71,14 +85,12 @@ def request(target):
 
 
 def handle_ip(target):
-    #from urllib.parse import urlparse
     from six.moves.urllib.parse import urlparse
     address = urlparse('http://%s' % target)
     return address.hostname, address.port or 80
 
 
 def fetch(payload):
-    #with multiprocessing.Pool(concurrent) as pool:
     for service_item in payload:
         print(service_item['title'])
         print(', '.join(service_item['domains']))
@@ -92,7 +104,6 @@ def fetch(payload):
             print('\t%s' % name)
             for item in ips:
                 print('\t\t%(ip)-15s\t%(delta)sms' % item)
-
     return payload
 
 
