@@ -2,36 +2,6 @@
 （作者是个 16 岁的穷逼，求捐赠，帐号请拉到页面最下方。）
 
 
-感谢 @raptium 和 @xjbeta 提供的自动生成脚本[（Apache License 2.0)](https://gist.github.com/raptium/5a9675667b05529857d4)
-
-将 autogen.py 和 List.md 下载到本地后在终端中执行
-
-
-```
-cd /path/to/AppleDNS
-// Surge 配置
-python autogen.py -f surge List.md
-// Hosts 文件
-python autogen.py -f hosts List.md
-// Merlin 固件配置
-python autogen.py -f merlin List.md
-
-// 注意：请将结果中的 api.itunes.apple.com 更改为 client-api.itunes.apple.com
-
-// 设置完成后需要清理 DNS 缓存
-// OS X v10.10.4 或更高版本
-sudo killall -HUP mDNSResponder
-// OS X v10.10 至 v10.10.3
-sudo killall -HUP mDNSResponder
-// Windoge 系统
-ipconfig /flushdns
-
-```
-
-
-
-手动操作指南：
-
 在 List.md 中选择与您物理位置相对近的 IP 并按照规则填入 Hosts 文件、私有 DNS 配置文件、Surge 配置文件中即可。
 建议移动用户尽量使用移动 IP。
 
