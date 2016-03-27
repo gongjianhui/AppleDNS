@@ -1,0 +1,60 @@
+[
+    {
+        "title": "API-1-ChinaNetCenter",
+        "domains": [
+            "play.itunes.apple.com",
+            "upp.itunes.apple.com",
+            "client-api.itunes.apple.com",
+            "su.itunes.apple.com",
+            "se.itunes.apple.com"
+        ],
+        "ips": {
+            "CMCC": [
+                "111.11.31.83:443",
+                "218.202.111.167:443",
+                "112.25.35.17:443",
+                "111.1.33.238:443",
+                "112.17.26.99:443",
+                "120.209.141.70:443",
+                "120.209.142.59:443",
+                "112.29.150.173:443",
+                "183.222.99.114:443",
+                "117.172.21.13:443",
+                "117.187.19.158:443",
+                "111.44.244.49:443"                 
+            ]
+        }
+    },
+    {
+        "title": "API-HK1",
+        "domains": [
+            "search.itunes.apple.com"
+        ],
+        "ips": {
+            "HongKong0": [
+                "23.50.17.214",
+                "60.254.170.217",
+                "104.114.184.38",
+                "184.87.97.50",
+                "60.254.170.217",
+                "23.42.189.88",
+                "23.198.133.66"
+            ]
+        }
+    },
+    {
+        "title": "API-HK2-AMRadio",
+        "domains": [
+            "radio.itunes.apple.com",
+            "radio-services.itunes.apple.com",
+            "radio-activity.itunes.apple.com"
+        ],
+        "ips": {
+            "HongKong1": [
+                "23.13.185.169",
+                "104.89.141.101",
+                "184.87.100.246"
+            ]
+        }
+    }
+]
