@@ -1,21 +1,6 @@
-<<<<<<< Updated upstream
-# Author:jannson,CC0
-#!/usr/bin/env python
-=======
-<<<<<<< HEAD
-<<<<<<< HEAD
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 # Author: jannson, CC0
-=======
-# Author:jannson,CC0
-#!/usr/bin/env python
->>>>>>> origin/master
-=======
-# Author:jannson,CC0
-#!/usr/bin/env python
->>>>>>> origin/master
->>>>>>> Stashed changes
 import argparse
 import json
 from datetime import datetime
