@@ -16,8 +16,8 @@ cd /path/to/AppleDNS
 python3 fetch-timeout.py --payload ChinaUnicom/ChinaNet/CMCC.json 
 //（请选择你的运营商对应文件 ChinaUnicom 联通、ChinaNet 电信、CMCC 移动）
 // 测速中，需等待数秒
-python3 export-configure.py [-t {surge,hosts,merlin}]
-// 生成各种形式的配置(如 Surge 执行 python3 export-configure.py -t surge)
+python3 export-configure.py [--target {surge,hosts,merlin}]
+// 生成各种形式的配置(如 Surge 执行 python3 export-configure.py --target surge)
 
 ** 将配置文件放到相应的位置（HOSTS 放入系统相应位置、路由器用户请独立配置路由器后台）**
 ** Surge 用户请在配置文件 [Rule] 前新建 [Host] 将生成的配置放入 [Host] 后（[Rule] 前）。**
