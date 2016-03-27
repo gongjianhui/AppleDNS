@@ -1,18 +1,24 @@
 #!/usr/bin/env python3
 import argparse
 import json
-from operator import attrgetter
+from collections import defaultdict
 
 formats = {
-    'hosts': '{ip} {domain}',
+    'hosts': '{ip:<15} {domain}',
     'surge': '{domain} = {ip}',
     'merlin': 'address=/{domain}/{ip}',
 }
 
 
 def find_fast_ip(ips):
-    items = sorted(sum(ips.values(), []), key=lambda item: item['delta'])
-    return items[0].get('ip')
+    table = defaultdict(list)
+    for item in sum(ips.values(), []):
+        table[item['ip']].append(item['delta'])
+    table = map(
+        lambda item: (item[0], sum(item[1]) / len(item[1])),
+        table.items()
+    )
+    return sorted(table, key=lambda item: item[1])[0][0]
 
 
 def export(payload, target):
@@ -20,23 +26,23 @@ def export(payload, target):
         fast_ip = find_fast_ip(service['ips'])
         if not fast_ip:
             break
-        for domain in service['domains']:
+        for domain in sorted(service['domains']):
             print(formats[target].format(domain=domain, ip=fast_ip))
 
 
-def main(args):
+def main():
+    parser = argparse.ArgumentParser()
+    parser.add_argument(
+        '--target',
+        dest='target', 
+        help='output target',
+        default='surge',
+        choices=formats.keys()
+    )
+    args = parser.parse_args()
     payload = json.load(open('result.json'))
     export(payload, args.target)
 
 
 if __name__ == '__main__':
-    parser = argparse.ArgumentParser()
-    parser.add_argument(
-        '-t',
-        '--target',
-        dest='target', help='output target',
-        default='surge',
-        choices=['surge', 'hosts', 'merlin']
-    )
-    args = parser.parse_args()
-    main(args)
+    main()

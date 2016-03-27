@@ -1,9 +1,9 @@
 #!/usr/bin/env python3
+import argparse
 import json
 import multiprocessing
 from datetime import datetime
 
-payload = json.load(open('payload.json'))
 timeout = 400  # unit ms
 concurrent = 10
 testing_times = 10
@@ -74,7 +74,7 @@ def handle_ip(target):
     return address.hostname, address.port or 80
 
 
-def main():
+def fetch(payload):
     with multiprocessing.Pool(concurrent) as pool:
         for service_item in payload:
             print(service_item['title'])
@@ -89,6 +89,14 @@ def main():
                 print('\t%s' % name)
                 for item in ips:
                     print('\t\t%(ip)-15s\t%(delta)sms' % item)
+    return payload
+
+
+def main():
+    parser = argparse.ArgumentParser()
+    parser.add_argument('--payload', dest='payload', default='payload.json')
+    args = parser.parse_args()
+    payload = fetch(json.load(open(args.payload)))
     json.dump(payload, open('result.json', 'w'))
 
 

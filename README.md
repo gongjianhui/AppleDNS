@@ -13,9 +13,8 @@
 ```
 cd /path/to/AppleDNS
 // 切到 AppleDNS 的文件夹
-cp ChinaUnicom/ChinaNet/CMCC.json payload.json
-// 选择你运营商对应的配置文件，复制一份命名 payload.json（ChinaUnicom 联通、ChinaNet 电信、CMCC 移动）
-python3 fetch-timeout.py
+python3 fetch-timeout.py —payload ChinaUnicom/ChinaNet/CMCC.json 
+（请选择你的运营商对应文件 ChinaUnicom 联通、ChinaNet 电信、CMCC 移动）
 // 测速中，需等待数秒
 python3 export-configure.py [-t {surge,hosts,merlin}]
 // 生成各种形式的配置(如 Surge 执行 python3 export-configure.py -t surge)
