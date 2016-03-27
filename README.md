@@ -7,16 +7,26 @@
 鹏博士马甲集团（长城宽带、宽带通、电信通）及其他运营商可以尝试联系作者（Telegram @gongjianhui）付费手动配置。
 
 ## 生成教程：
-确保你系统中安装了 Python3
+确保你系统中安装了 Python3 或者 Python2 (OS X 和其他 Linux 发行版内建)
 将本项目下载到本地 (git clone 或者下载[压缩包](https://github.com/gongjianhui/AppleDNS/archive/master.zip))
 
 ```
 cd /path/to/AppleDNS
 // 切到 AppleDNS 的文件夹
-python3 fetch-timeout.py --payload ChinaUnicom/ChinaNet/CMCC.json 
+
+python fetch-timeout-py2.py --payload ChinaUnicom/ChinaNet/CMCC.json 
+// Python 2 版本用户使用脚本
 //（请选择你的运营商对应文件 ChinaUnicom 联通、ChinaNet 电信、CMCC 移动）
 // 测速中，需等待数秒
+
+python3 fetch-timeout.py --payload ChinaUnicom/ChinaNet/CMCC.json 
+// Python 3 脚本，多线程
+//（请选择你的运营商对应文件 ChinaUnicom 联通、ChinaNet 电信、CMCC 移动）
+// 测速中，需等待数秒
+
 python3 export-configure.py [--target {surge,hosts,merlin}]
+或
+python export-configure.py [--target {surge,hosts,merlin}]
 // 生成各种形式的配置(如 Surge 执行 python3 export-configure.py --target surge)
 
 ** 将配置文件放到相应的位置（HOSTS 放入系统相应位置、路由器用户请独立配置路由器后台）**
