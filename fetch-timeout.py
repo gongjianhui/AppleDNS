@@ -97,7 +97,7 @@ def main():
     parser = argparse.ArgumentParser()
     parser.add_argument('--payload', dest='payload', default='payload.json')
     args = parser.parse_args()
-    payload = fetch(json.load(open(args.payload)))
+    payload = fetch(json.load(open(args.payload, encoding='UTF-8')))
     json.dump(payload, open('result.json', 'w'))
 
 

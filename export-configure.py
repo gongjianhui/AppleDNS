@@ -19,29 +19,32 @@ def find_fast_ip(ips):
         lambda item: (item[0], sum(item[1]) / len(item[1])),
         table.items()
     )
-    return sorted(table, key=lambda item: item[1])[0][0]
+    ip, rt = sorted(table, key=lambda item: item[1])[0]
+    return ip
 
 
 def export(payload, target):
-    for service in payload:
+    for service in sorted(payload, key=lambda item: item['title']):
         fast_ip = find_fast_ip(service['ips'])
-        if not fast_ip:
-            break
-        for domain in sorted(service['domains']):
-            print(formats[target].format(domain=domain, ip=fast_ip))
+        print('# %(title)s' % service)
+        for domain in sorted(service['domains'], key=len):
+            template = '%s'
+            if not fast_ip:
+                template = '# %s'
+            print(template % formats[target].format(domain=domain, ip=fast_ip))
 
 
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument(
         '--target',
-        dest='target', 
+        dest='target',
         help='output target',
         default='surge',
         choices=formats.keys()
     )
     args = parser.parse_args()
-    payload = json.load(open('result.json'))
+    payload = json.load(open('result.json', encoding='UTF-8'))
     export(payload, args.target)
 
 
