@@ -45,7 +45,7 @@ address=/itunes.apple.com/***
 
 手动操作指南：请查看 OLD 文件夹。
 
-**如果你是 Apple Music 重度用户，请额外通过 Music.json 生成单独的 Apple Music 配置覆盖原先配置中相关域名，可解决该问题.（生成方法同上）**
+**如果你是 Apple Music 重度用户，请额外通过 Music.json 生成单独的 Apple Music 配置覆盖原先配置中相关域名，可解决非热门歌曲无法加载、速度慢问题.（生成方法同上）**
 
 ## 给我资持，大家资不资磁？（请我喝杯咖啡好不好，少年？）
 ![](https://s3-up.gongjianhui.com/money.png?a)
