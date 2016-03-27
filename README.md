@@ -7,14 +7,14 @@
 鹏博士马甲集团（长城宽带、宽带通、电信通）及其他运营商可以尝试联系作者（Telegram @gongjianhui）付费手动配置。
 
 ## 生成教程：
-确保你系统中安装了 Python3 以及 Python Requests 包 (你可以通过 Pip 安装：python3 -m pip install requests)
+确保你系统中安装了 Python3
 将本项目下载到本地 (git clone 或者下载[压缩包](https://github.com/gongjianhui/AppleDNS/archive/master.zip))
 
 ```
 cd /path/to/AppleDNS
 // 切到 AppleDNS 的文件夹
 cp ChinaUnicom/ChinaNet/CMCC.json payload.json
-// 选择你运营商对应的配置文件，复制一份命名 payload.json（ChinaUnicom.json 联通、ChinaNet.json 电信、CMCC.json 移动）
+// 选择你运营商对应的配置文件，复制一份命名 payload.json（ChinaUnicom 联通、ChinaNet 电信、CMCC 移动）
 python3 fetch-timeout.py
 // 测速中，需等待数秒
 python3 export-configure.py [-t {surge,hosts,merlin}]
