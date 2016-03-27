@@ -48,6 +48,7 @@ address=/itunes.apple.com/***
 **如果你是 Apple Music 重度用户，请额外通过 Music.json 生成单独的 Apple Music 配置覆盖原先配置中相关域名，可解决该问题.（生成方法同上）**
 
 ## 给我资持，大家资不资磁？
+![](https://s3-up.gongjianhui.com/money.png)
 ### 支付裱: i@gongjianhui.com
 ### BTC: 1Jianhui1ZUDHDCz1TGzGH2rWaxas1GS9S
 
