@@ -49,7 +49,7 @@ address=/itunes.apple.com/***
 
 ## 给我资持，大家资不资磁？（请我喝杯咖啡好不好，少年？）
 ![](https://s3-up.gongjianhui.com/money.png?a)
-### 支付裱: i@gongjianhui.com
+### 支付宝: i@gongjianhui.com
 ### BTC: 1Jianhui1ZUDHDCz1TGzGH2rWaxas1GS9S
 
 Apple、App Store、Apple Music 和 iTunes 是 Apple Inc. 在美国和其他 国家/地区的注册商标。
