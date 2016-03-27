@@ -1,29 +1,24 @@
-# AppleDNS V3.0，真的快，快出声。
-（作者是个 16 岁的穷逼，求捐赠，账号见下方。）
+# 全新的 AppleDNS，大快所有人心的好项目。真的快，快出声！
+（作者是个 16 岁的穷逼，求捐赠，帐号请拉到页面最下方。）
 
-感谢一位不愿意透露姓名的 Telegram 用户提供的 Python 生成脚本 (CC0 授权)。
 
-本配置文件目前对联通、电信、移动用户友好，
-鹏博士马甲集团（长城宽带、宽带通、电信通）及其他运营商可以尝试联系作者（Telegram @gongjianhui）付费手动配置。
+感谢 @raptium 和 @xjbeta 提供的自动生成脚本[（Apache License 2.0)](https://gist.github.com/raptium/5a9675667b05529857d4)
 
-## 生成教程：
-确保你系统中安装了 Python3 以及 Python Requests 包 (你可以通过 Pip 安装：python3 -m pip install requests)
-将本项目下载到本地 (git clone 或者下载[压缩包](https://github.com/gongjianhui/AppleDNS/archive/master.zip))
+将 autogen.py 和 List.md 下载到本地后在终端中执行
+
 
 ```
 cd /path/to/AppleDNS
-// 切到 AppleDNS 的文件夹
-cp ChinaUnicom/ChinaNet/CMCC.json payload.json
-// 选择你运营商对应的配置文件，复制一份命名 payload.json（ChinaUnicom.json 联通、ChinaNet.json 电信、CMCC.json 移动）
-python3 fetch-timeout.py
-// 测速中，需等待数秒
-python3 export-configure.py [-t {surge,hosts,merlin}]
-// 生成各种形式的配置(如 Surge 执行 python3 export-configure.py -t surge)
+// Surge 配置
+python autogen.py -f surge List.md
+// Hosts 文件
+python autogen.py -f hosts List.md
+// Merlin 固件配置
+python autogen.py -f merlin List.md
 
-** 将配置文件放到相应的位置（HOSTS 放入系统相应位置、路由器用户请独立配置路由器后台）**
-** Surge 用户请在配置文件 [Rule] 前新建 [Host] 将生成的配置放入 [Host] 后（[Rule] 前）。**
+// 注意：请将结果中的 api.itunes.apple.com 更改为 client-api.itunes.apple.com
 
-// 设置完成后可按需清理 DNS 缓存
+// 设置完成后需要清理 DNS 缓存
 // OS X v10.10.4 或更高版本
 sudo killall -HUP mDNSResponder
 // OS X v10.10 至 v10.10.3
@@ -33,11 +28,63 @@ ipconfig /flushdns
 
 ```
 
-手动操作指南：请查看 OLD 文件夹。
+
+
+手动操作指南：
+
+在 List.md 中选择与您物理位置相对近的 IP 并按照规则填入 Hosts 文件、私有 DNS 配置文件、Surge 配置文件中即可。
+建议移动用户尽量使用移动 IP。
+
+iOS Surge 配置，在 [Rule] 前加入以下内容，等号右侧为您在 List.md 中选择的 IP，每组可使用一个 IP（共 5 组）。（您可以参考或可以直接编辑项目中的 surge.conf 文件）
+```
+[Host]
+iosapps.itunes.apple.com = 
+streamingaudio.itunes.apple.com = 
+aod.itunes.apple.com = 
+
+radio.itunes.apple.com = 
+radio-services.itunes.apple.com = 
+radio-activity.itunes.apple.com = 
+
+search.itunes.apple.com = 
+
+init.itunes.apple.com = 
+itunes.apple.com = 
+
+play.itunes.apple.com = 
+upp.itunes.apple.com = 
+client-api.itunes.apple.com = 
+su.itunes.apple.com = 
+se.itunes.apple.com = 
+
+```
+## 请 Apple Music 用户额外留意项目中 Music.md 文件
+
+# Hosts 配置 您需要按照 [IP 空格 域名] 一行一个的形式配置，每组可使用同样的 IP（共 5 组）
+```
+iosapps.itunes.apple.com
+osxapps.itunes.apple.com
+streamingaudio.itunes.apple.com
+aod.itunes.apple.com
+
+radio.itunes.apple.com
+radio-services.itunes.apple.com
+radio-activity.itunes.apple.com
+
+search.itunes.apple.com
+
+init.itunes.apple.com
+itunes.apple.com
+
+play.itunes.apple.com
+upp.itunes.apple.com
+client-api.itunes.apple.com
+su.itunes.apple.com
+se.itunes.apple.com
+```
 
 ## 给我资持，大家资不资磁？
 ### 支付裱: i@gongjianhui.com
 ### BTC: 1Jianhui1ZUDHDCz1TGzGH2rWaxas1GS9S
 
 Apple、App Store、Apple Music 和 iTunes 是 Apple Inc. 在美国和其他 国家/地区的注册商标。
-
