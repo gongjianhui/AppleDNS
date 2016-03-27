@@ -43,7 +43,7 @@ address=/itunes.apple.com/***
 
 ## 其他
 
-手动操作指南：请查看 OLD 文件夹。
+手动操作指南：请查看 OLD 分支。
 
 **如果你是 Apple Music 重度用户，请额外通过 Music.json 生成单独的 Apple Music 配置覆盖原先配置中相关域名，可解决非热门歌曲无法加载、速度慢问题.（生成方法同上）**
 
