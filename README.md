@@ -43,7 +43,7 @@ address=/itunes.apple.com/***
 
 手动操作指南：请查看 OLD 文件夹。
 
-**如果你是 Apple Music 重度用户，请通过 Music.json 生成单独的 Apple Music 配置，可解决改问题.（生成方法同上）**
+**如果你是 Apple Music 重度用户，请额外通过 Music.json 生成单独的 Apple Music 配置覆盖原先配置中相关域名，可解决该问题.（生成方法同上）**
 
 ## 给我资持，大家资不资磁？
 ### 支付裱: i@gongjianhui.com
