@@ -1,6 +1,8 @@
 # AppleDNS V3.0  真的快，快出声。
 （作者是个 16 岁的穷逼，求捐赠，账号见下方。）
 
+AppleDNS 通过收集 Apple 在全中国几乎所有省级行政区的 CDN IP 列表，解决 App Store / Mac App Store / iTunes Store / Apple Music / iBooks / TestFlight 在中国部分地区速度缓慢的问题。
+
 感谢一位不愿意透露姓名的 Telegram 用户提供的 Python 生成脚本 (CC0 授权)。
 
 本配置文件目前对联通、电信、移动用户友好，
