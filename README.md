@@ -23,9 +23,8 @@ python3 export-configure.py [--target {surge,hosts,merlin}]
 ** Surge 用户请在配置文件 [Rule] 前新建 [Host] 将生成的配置放入 [Host] 后（[Rule] 前）。**
 
 // 设置完成后可按需清理 DNS 缓存
-// OS X v10.10.4 或更高版本
-sudo killall -HUP mDNSResponder
-// OS X v10.10 至 v10.10.3
+
+// OS X
 sudo killall -HUP mDNSResponder
 // Windoge 系统
 ipconfig /flushdns
