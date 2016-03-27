@@ -32,6 +32,12 @@ ipconfig /flushdns
 ```
 
 手动操作指南：请查看 OLD 文件夹。
+如果你是 Apple Music 重度用户，请额外留意 Repo 中 Music.md 文件。
+如果你是 TestFlight 用户，可尝试添加
+```
+beta.itunes.apple.com = 23.198.126.94 
+// Surge 配置，其他系统请根据示例自己配置
+```
 
 ## 给我资持，大家资不资磁？
 ### 支付裱: i@gongjianhui.com
