@@ -2,7 +2,6 @@
 # -*- coding: utf-8 -*-
 import argparse
 import json
-import io
 from collections import defaultdict
 
 formats = {
@@ -45,7 +44,7 @@ def main():
         choices=formats.keys()
     )
     args = parser.parse_args()
-    payload = json.load(io.open('result.json', encoding='UTF-8'))
+    payload = json.load(open('result.json', encoding='UTF-8'))
     export(payload, args.target)
 
 
