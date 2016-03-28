@@ -27,7 +27,7 @@ def find_fast_ip(ips):
 def export(payload, target):
     for service in sorted(payload, key=lambda item: item['title']):
         fast_ip = find_fast_ip(service['ips'])
-        print('# %(title)s' % service)
+        print(('# %(title)s' % service).encode('utf8', 'ignore'))
         for domain in sorted(service['domains'], key=len):
             template = '%s'
             if not fast_ip:

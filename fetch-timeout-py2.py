@@ -77,7 +77,7 @@ def handle_ip(target):
 
 def fetch(payload):
     for service_item in payload:
-        print(service_item['title'])
+        print(service_item['title'].encode('utf8', 'ignore'))
         print(', '.join(service_item['domains']))
         for name, ips in service_item['ips'].items():
             ips = itertools.imap(request, map(handle_ip, ips * testing_times))
