@@ -1,5 +1,7 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
+# Author: jannson, CC0
+# Modified by Bit Ye
 import json
 import multiprocessing
 from datetime import datetime
