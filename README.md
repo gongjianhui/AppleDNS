@@ -15,30 +15,31 @@ AppleDNS 通过收集 Apple 在全中国几乎所有省级行政区的 CDN IP �
 确保你系统中安装了 Python3 或者 Python2 (OS X 和其他 Linux 发行版内建)
 将本项目下载到本地 (git clone 或者下载[压缩包](https://github.com/gongjianhui/AppleDNS/archive/master.zip))
 
-```
+```bash
 cd /path/to/AppleDNS
-// 切到 AppleDNS 的文件夹
+# 切到 AppleDNS 的文件夹
 
 ./fetch-timeout.py ChinaUnicom/ChinaNet/CMCC.json 
 
-// Python 2/3 兼容脚本
-//（请选择你的运营商对应文件 ChinaUnicom 联通、ChinaNet 电信、CMCC 移动）
-// 确认即开始进行测速，需等待数秒 
+# Python 2.7+ / Python 3.4+ 兼容脚本
+#（请选择你的运营商对应文件 ChinaUnicom 联通、ChinaNet 电信、CMCC 移动）
+# 确认即开始进行测速，需等待数秒 
 
 ./export-configure.py {surge,hosts,merlin}
 
-// 生成各种形式的配置(如 Surge 执行 python export-configure.py surge)
+# 生成各种形式的配置(如 Surge 执行 python export-configure.py surge)
 
-** 将配置文件放到相应的位置（HOSTS 放入系统相应位置、路由器用户请独立配置路由器后台）**
-** Surge 用户请在配置文件 [Rule] 前新建 [Host] 将生成的配置放入 [Host] 后（[Rule] 前）。**
+# ** 将配置文件放到相应的位置（HOSTS 放入系统相应位置、路由器用户请独立配置路由器后台）**
+# ** Surge 用户请在配置文件 [Rule] 前新建 [Host] 将生成的配置放入 [Host] 后（[Rule] 前）。**
 
-// 设置完成后可按需清理 DNS 缓存
 
-// OS X
+# 设置完成后可按需清理 DNS 缓存
+
+# OS X
 sudo killall -HUP mDNSResponder
-// Windoge 系统
-ipconfig /flushdns
 
+# Windoges 系统
+ipconfig /flushdns
 ```
 ## DNSMASQ 用户和 MERLIN 用户警告：
 请删除配置文件中的 
