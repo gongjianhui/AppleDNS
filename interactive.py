@@ -138,7 +138,7 @@ def make_choice_isp():
     return ISP
 
 def make_choice_config():
-    print("Choose your the Config Syntax")
+    print("Choose the Config Syntax")
     print("Input 1, 2 or 3.")
     print("1 for surge; 2 for hosts; 3 for merlin.")
     c = int(input("input:"))
