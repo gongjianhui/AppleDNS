@@ -33,9 +33,8 @@ def find_fast_ip(ips):
         lambda item: (item[0], sum(item[1]) / len(item[1])),
         table.items()
     )
-    if len(table):
-        ip, rt = sorted(table, key=lambda item: item[1])[0]
-        return ip
+    ip, rt = sorted(table, key=lambda item: item[1])[0]
+    return ip
 
 
 def export(payload, target):
