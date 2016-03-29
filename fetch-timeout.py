@@ -2,15 +2,6 @@
 # -*- coding: utf-8 -*-
 from __future__ import unicode_literals
 
-import json
-import multiprocessing
-import os.path
-from argparse import ArgumentParser
-from contextlib import closing
-from datetime import datetime
-
-from io import open
-
 timeout = 400  # unit ms
 concurrent = 10
 testing_times = 10
@@ -35,6 +26,7 @@ def request(target):
     host, port = target
     from socket import socket
     from socket import error
+    from datetime import datetime
     try:
         begin_time = datetime.now()
 
@@ -65,6 +57,8 @@ def handle_ip(target):
 def fetch(payload):
     if not payload:
         return
+    import multiprocessing
+    from contextlib import closing
     with closing(multiprocessing.Pool(concurrent)) as pool:
         for service_item in payload:
             print(service_item['title'])
@@ -83,20 +77,26 @@ def fetch(payload):
 
 
 def load_payload(path):
+    import json
+    import os.path
+    from io import open
     if os.path.exists(path):
         with open(path, encoding='UTF-8') as fp:
             return json.loads(fp.read())
-    return None
 
 
 def save_result(payload):
+    import json
+    from io import open
+    target_filename = 'apple-cdn-speed.report'
     try:
-        json.dump(payload, open('result.json', 'wb'))
+        json.dump(payload, open(target_filename, 'wb'))
     except:
-        json.dump(payload, open('result.json', 'w'))
+        json.dump(payload, open(target_filename, 'w'))
 
 
 def main():
+    from argparse import ArgumentParser
     parser = ArgumentParser()
     parser.add_argument('payload', help='payload')
     args = parser.parse_args()

@@ -2,12 +2,6 @@
 # -*- coding: utf-8 -*-
 from __future__ import unicode_literals
 
-import argparse
-import json
-from collections import defaultdict
-
-from io import open
-
 formats = {
     'hosts': '{ip:<15} {domain}',
     'surge': '{domain} = {ip}',
@@ -31,6 +25,7 @@ def check_requirements():
 
 
 def find_fast_ip(ips):
+    from collections import defaultdict
     table = defaultdict(list)
     for item in sum(ips.values(), []):
         table[item['ip']].append(item['delta'])
@@ -41,10 +36,11 @@ def find_fast_ip(ips):
     if len(table):
         ip, rt = sorted(table, key=lambda item: item[1])[0]
         return ip
-    return None
 
 
 def export(payload, target):
+    if not payload:
+        return
     for service in sorted(payload, key=lambda item: item['title']):
         fast_ip = find_fast_ip(service['ips'])
         print('# %(title)s' % service)
@@ -55,8 +51,19 @@ def export(payload, target):
             print(template % formats[target].format(domain=domain, ip=fast_ip))
 
 
+def load_payload():
+    import json
+    import os.path
+    from io import open
+    target_filename = 'apple-cdn-speed.report'
+    if os.path.exists(target_filename):
+        return json.load(open(target_filename, encoding='UTF-8'))
+    print('please run "fetch-timeout.py" build "%s".' % target_filename)
+
+
 def main():
-    parser = argparse.ArgumentParser()
+    from argparse import ArgumentParser
+    parser = ArgumentParser()
     parser.add_argument(
         'target',
         help='output target',
@@ -64,8 +71,8 @@ def main():
         choices=sorted(formats.keys(), key=len)
     )
     args = parser.parse_args()
-    payload = json.load(open('result.json', encoding='UTF-8'))
-    export(payload, args.target)
+
+    export(load_payload(), args.target)
 
 
 if __name__ == '__main__' and check_requirements():
