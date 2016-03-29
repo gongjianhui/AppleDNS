@@ -34,7 +34,6 @@ def export(payload, target):
                 template = '# %s'
             print(template % formats[target].format(domain=domain, ip=fast_ip))
 
-
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument(
