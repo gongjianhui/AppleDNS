@@ -1,5 +1,6 @@
-# AppleDNS V3.0  真的快，快出声。
+# AppleDNS V3.0.5  真的快，快出声。
 [（作者是个 16 岁的少年，能请我喝一杯咖啡吗？）](https://github.com/gongjianhui/AppleDNS#给我资持大家资不资磁请我喝杯咖啡好不好少年)
+**少数派用户注意：少数派中的教程可能已经失效，请尽量查看以下教程。**
 
 （如果你实在看不懂，找作者付费 42 元给你配置吧。邮箱和 iMessage:i@gongjianhui.com, Telegram@gongjianhui）
 
@@ -18,14 +19,14 @@ AppleDNS 通过收集 Apple 在全中国几乎所有省级行政区的 CDN IP �
 cd /path/to/AppleDNS
 // 切到 AppleDNS 的文件夹
 
-python3 fetch-timeout.py --payload ChinaUnicom/ChinaNet/CMCC.json 
-// Python 3 脚本，多线程（Python2 用户请使用 fetch-timeout-py2.py）
+python fetch-timeout.py ChinaUnicom/ChinaNet/CMCC.json 
+// Python 2/3 兼容脚本
 //（请选择你的运营商对应文件 ChinaUnicom 联通、ChinaNet 电信、CMCC 移动）
-// 测速中，需等待数秒 
+// 确认即开始进行测速，需等待数秒 
 
-python3 export-configure.py [--target {surge,hosts,merlin}]
+python export-configure.py {surge,hosts,merlin}
 
-// 生成各种形式的配置(如 Surge 执行 python3 export-configure.py --target surge)
+// 生成各种形式的配置(如 Surge 执行 python export-configure.py surge)
 
 ** 将配置文件放到相应的位置（HOSTS 放入系统相应位置、路由器用户请独立配置路由器后台）**
 ** Surge 用户请在配置文件 [Rule] 前新建 [Host] 将生成的配置放入 [Host] 后（[Rule] 前）。**

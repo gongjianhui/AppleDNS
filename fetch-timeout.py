@@ -1,9 +1,15 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-import argparse
+from __future__ import unicode_literals
+
 import json
 import multiprocessing
+import os.path
+from argparse import ArgumentParser
+from contextlib import closing
 from datetime import datetime
+
+from io import open
 
 timeout = 400  # unit ms
 concurrent = 10
@@ -14,38 +20,15 @@ def check_requirements():
     import sys
 
     def check_python_version():
-        if sys.hexversion <= 0x3040000:
+        if sys.hexversion >= 0x2000000 and sys.hexversion <= 0x2070000:
+            print('your "python" lower than 2.7.0 upgrade.')
+            return False
+        if sys.hexversion >= 0x3000000 and sys.hexversion <= 0x3040000:
             print('your "python" lower than 3.4.0 upgrade.')
             return False
         return True
 
-    def check_is_use_proxy():
-        from os import environ
-        http_proxy = environ.get('http_proxy')
-        HTTP_PROXY = environ.get('HTTP_PROXY')
-        https_proxy = environ.get('https_proxy')
-        HTTPS_PROXY = environ.get('HTTPS_PROXY')
-
-        def output(name, value):
-            if value:
-                print('%s=%s' % (name, value))
-
-        if http_proxy or HTTP_PROXY or https_proxy or HTTPS_PROXY:
-            print('you are using a proxy test')
-            output('http_proxy', http_proxy)
-            output('HTTP_PROXY', HTTP_PROXY)
-            output('https_proxy', https_proxy)
-            output('HTTPS_PROXY', HTTPS_PROXY)
-            print()
-
-        return True
-
-    return all(
-        (
-            check_python_version(),
-            check_is_use_proxy()
-        )
-    )
+    return check_python_version()
 
 
 def request(target):
@@ -63,20 +46,26 @@ def request(target):
 
         delta = end_time - begin_time
 
-        rt = (delta.seconds * 1000.0) + (delta.microseconds / 1000.0)
+        rt = (delta.seconds * 1000) + (delta.microseconds / 1000.0)
         return host, rt
     except error as err:
         return host, False
 
 
 def handle_ip(target):
-    from urllib.parse import urlparse
+    try:
+        from urllib.parse import urlparse
+    except ImportError:
+        from urlparse import urlparse
+
     address = urlparse('http://%s' % target)
     return address.hostname, address.port or 80
 
 
 def fetch(payload):
-    with multiprocessing.Pool(concurrent) as pool:
+    if not payload:
+        return
+    with closing(multiprocessing.Pool(concurrent)) as pool:
         for service_item in payload:
             print(service_item['title'])
             print(', '.join(service_item['domains']))
@@ -93,12 +82,26 @@ def fetch(payload):
     return payload
 
 
+def load_payload(path):
+    if os.path.exists(path):
+        with open(path, encoding='UTF-8') as fp:
+            return json.loads(fp.read())
+    return None
+
+
+def save_result(payload):
+    try:
+        json.dump(payload, open('result.json', 'wb'))
+    except:
+        json.dump(payload, open('result.json', 'w'))
+
+
 def main():
-    parser = argparse.ArgumentParser()
-    parser.add_argument('--payload', dest='payload', default='payload.json')
+    parser = ArgumentParser()
+    parser.add_argument('payload', help='payload')
     args = parser.parse_args()
-    payload = fetch(json.load(open(args.payload, encoding='UTF-8')))
-    json.dump(payload, open('result.json', 'w'))
+
+    save_result(fetch(load_payload(args.payload)))
 
 
 if __name__ == '__main__' and check_requirements():

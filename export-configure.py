@@ -1,14 +1,33 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
+from __future__ import unicode_literals
+
 import argparse
 import json
 from collections import defaultdict
+
+from io import open
 
 formats = {
     'hosts': '{ip:<15} {domain}',
     'surge': '{domain} = {ip}',
     'merlin': 'address=/{domain}/{ip}',
 }
+
+
+def check_requirements():
+    import sys
+
+    def check_python_version():
+        if sys.hexversion >= 0x2000000 and sys.hexversion <= 0x2070000:
+            print('your "python" lower than 2.7.0 upgrade.')
+            return False
+        if sys.hexversion >= 0x3000000 and sys.hexversion <= 0x3040000:
+            print('your "python" lower than 3.4.0 upgrade.')
+            return False
+        return True
+
+    return check_python_version()
 
 
 def find_fast_ip(ips):
@@ -19,8 +38,10 @@ def find_fast_ip(ips):
         lambda item: (item[0], sum(item[1]) / len(item[1])),
         table.items()
     )
-    ip, rt = sorted(table, key=lambda item: item[1])[0]
-    return ip
+    if len(table):
+        ip, rt = sorted(table, key=lambda item: item[1])[0]
+        return ip
+    return None
 
 
 def export(payload, target):
@@ -37,16 +58,15 @@ def export(payload, target):
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument(
-        '--target',
-        dest='target',
+        'target',
         help='output target',
         default='surge',
-        choices=formats.keys()
+        choices=sorted(formats.keys(), key=len)
     )
     args = parser.parse_args()
     payload = json.load(open('result.json', encoding='UTF-8'))
     export(payload, args.target)
 
 
-if __name__ == '__main__':
+if __name__ == '__main__' and check_requirements():
     main()
