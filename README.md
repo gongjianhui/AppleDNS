@@ -1,74 +1,60 @@
-# 配置说明
-**在域名对应的 IP 中选择离你最近的，或者运营商类似的，配置在 Surge、路由器（或 Mac）的 hosts 或者自有 DNS 上即可。**
-如果 App 下载速度慢，配置 iosapps.itunes.apple.com<br>
-Apple Music （不包括 iCloud 音乐资料库中的私有内容）音频加载慢配置 streamingaudio.itunes.apple.com
+# AppleDNS V3.0.5  真的快，快出声。
+**[（作者是个 16 岁的少年，能请我喝一杯咖啡吗？）](https://github.com/gongjianhui/AppleDNS#给我资持大家资不资磁请我喝杯咖啡好不好少年)**
 
-# 由于数据采集方式的原因，可能会有一部分 IP 无法使用，请测试后再部署
+（如果你实在看不懂，找作者付费 42 元给你配置吧。邮箱和 iMessage:i@gongjianhui.com, Telegram@gongjianhui）
 
-## 提示：本项目对冷门资源无加速效果。
+AppleDNS 通过收集 Apple 在全中国几乎所有省级行政区的 CDN IP 列表，解决 App Store / Mac App Store / iTunes Store / Apple Music / iBooks / TestFlight 在中国部分地区速度缓慢的问题。
 
-# Surge 配置
-在配置文件最下方添加，IP请在 List.md 文件中查找，一组可以使用一个 IP。
+感谢一位不愿意透露姓名的 Telegram 用户提供的 Python 生成脚本 (CC0 授权)。
 
+本配置文件目前对联通、电信、移动用户友好，
+鹏博士马甲集团（长城宽带、宽带通、电信通）及其他运营商可以尝试联系作者（Telegram @gongjianhui）付费手动配置。
+
+## 生成教程：
+确保你系统中安装了 Python3 或者 Python2 (OS X 和其他 Linux 发行版内建)
+将本项目下载到本地 (git clone 或者下载[压缩包](https://github.com/gongjianhui/AppleDNS/archive/master.zip))
+
+```bash
+cd /path/to/AppleDNS
+# 切到 AppleDNS 的文件夹
+
+python fetch-timeout.py ChinaUnicom/ChinaNet/CMCC.json 
+
+# Python 2.7+ / Python 3.4+ 兼容脚本
+#（请选择你的运营商对应文件 ChinaUnicom 联通、ChinaNet 电信、CMCC 移动）
+# 确认即开始进行测速，需等待数秒 
+
+python export-configure.py {surge,hosts,merlin}
+
+# 生成各种形式的配置(如 Surge 执行 python export-configure.py surge)
+
+# ** 将配置文件放到相应的位置（HOSTS 放入系统相应位置、路由器用户请独立配置路由器后台）**
+# ** Surge 用户请在配置文件 [Rule] 前新建 [Host] 将生成的配置放入 [Host] 后（[Rule] 前）。**
+
+
+# 设置完成后可按需清理 DNS 缓存
+
+# OS X
+sudo killall -HUP mDNSResponder
+
+# Windoges 系统
+ipconfig /flushdns
 ```
-[Host]
+## DNSMASQ 用户和 MERLIN 用户警告：
+请删除配置文件中的 
+address=/itunes.apple.com/***
+该配置在 DNSMASQ 中意味着将 itunes.apple.com 泛解析！
 
-e7542.e9.akamaiedge.net = 
+## 其他
 
-a1.mzstatic.com = 
-a2.mzstatic.com = 
-a3.mzstatic.com = 
-a4.mzstatic.com = 
-a5.mzstatic.com = 
+手动操作指南：请查看 OLD 分支。
 
-is1.mzstatic.com = 
-is2.mzstatic.com = 
-is3.mzstatic.com = 
-is4.mzstatic.com = 
-is5.mzstatic.com = 
+**如果你是 Apple Music 重度用户，请额外通过 Music.json 生成单独的 Apple Music 配置覆盖原先配置中相关域名，可解决非热门歌曲无法加载、速度慢问题.（生成方法同上）**
 
-iosapps.itunes.apple.com = 
-streamingaudio.itunes.apple.com = 
-aod.itunes.apple.com = 
-
-radio.itunes.apple.com = 
-radio-services.itunes.apple.com = 
-radio-activity.itunes.apple.com = 
-
-client-api.itunes.apple.com = 
-```
-另外，如果您的 Surge 代理质量足够好，建议在 Rule 中添加一条
-```
-IP-CIDR,17.173.66.0/22,Proxy
-```
-
-# hosts 配置
-例：IP Domain
-```
-e7542.e9.akamaiedge.net
-a1.mzstatic.com 
-a2.mzstatic.com
-a3.mzstatic.com
-a4.mzstatic.com
-a5.mzstatic.com
-is1.mzstatic.com
-is2.mzstatic.com
-is3.mzstatic.com
-is4.mzstatic.com
-is5.mzstatic.com
-iosapps.itunes.apple.com
-streamingaudio.itunes.apple.com
-aod.itunes.apple.com
-radio.itunes.apple.com
-radio-services.itunes.apple.com
-radio-activity.itunes.apple.com
-client-api.itunes.apple.com
-```
-
-## 给我资持，大家资不资磁？
-### 支付裱: i@gongjianhui.com
-![](https://ooo.0o0.ooo/2016/01/28/56aaef6758139.jpg)
+## 给我资持，大家资不资磁？（请我喝杯咖啡好不好，少年？）
+![](https://s3-up.gongjianhui.com/money.png?a)
+### 支付宝: i@gongjianhui.com
 ### BTC: 1Jianhui1ZUDHDCz1TGzGH2rWaxas1GS9S
 
-
+Apple、App Store、Apple Music 和 iTunes 是 Apple Inc. 在美国和其他 国家/地区的注册商标。
 
