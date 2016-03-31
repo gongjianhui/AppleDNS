@@ -13,7 +13,7 @@
                 "184.87.97.50:443"
             ]
         },
-        "title": "API-HK1"
+        "title": "API-HK-Akamai-1"
     },
     {
         "domains": [
@@ -28,7 +28,7 @@
                 "184.87.100.246:443"
             ]
         },
-        "title": "API-HK2-AMRadio"
+        "title": "API-HK-Akamai-2-AMRadio"
     },
     {
         "domains": [
@@ -39,7 +39,7 @@
             "mvod.itunes.apple.com"
         ],
         "ips": {
-            "ChinaNet-ws": [
+            "ChinaNet-ChinaNetCenter": [
                 "14.215.100.98",
                 "14.215.100.99",
                 "14.215.100.136",
@@ -136,7 +136,7 @@
                 "222.246.212.75",
                 "223.151.245.42"
             ],
-            "ChinaUnicom-chinacache": [
+            "ChinaUnicom-ChinaCache": [
                 "42.81.22.148",
                 "58.215.109.6",
                 "58.215.109.161",
@@ -174,7 +174,7 @@
                 "222.174.239.173"
             ]
         },
-        "title": "Apple Music 音频文件、Mac/iOS App Store 应用"
+        "title": "Appple Music Streaming and iOS/OS X Apps"
     },
     {
         "domains": [
