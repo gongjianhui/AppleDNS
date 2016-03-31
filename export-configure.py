@@ -1,6 +1,17 @@
-#!/usr/bin/env python3
+#!/usr/bin/env python
 # -*- coding: utf-8 -*-
-from __future__ import unicode_literals
+from __future__ import print_function, unicode_literals
+
+import json
+import os.path
+import sys
+from argparse import ArgumentParser
+from collections import defaultdict
+
+from io import open
+
+if sys.version_info[0] == 2:
+    str = unicode
 
 formats = {
     'hosts': '{ip:<15} {domain}',
@@ -10,8 +21,6 @@ formats = {
 
 
 def check_requirements():
-    import sys
-
     def check_python_version():
         if sys.hexversion >= 0x2000000 and sys.hexversion <= 0x2070000:
             print('your "python" lower than 2.7.0 upgrade.')
@@ -25,7 +34,6 @@ def check_requirements():
 
 
 def find_fast_ip(ips):
-    from collections import defaultdict
     table = defaultdict(list)
     for item in sum(ips.values(), []):
         table[item['ip']].append(item['delta'])
@@ -53,9 +61,6 @@ def export(payload, target):
 
 
 def load_payload():
-    import json
-    import os.path
-    from io import open
     target_filename = 'apple-cdn-speed.report'
     if os.path.exists(target_filename):
         return json.load(open(target_filename, encoding='UTF-8'))
@@ -63,7 +68,6 @@ def load_payload():
 
 
 def main():
-    from argparse import ArgumentParser
     parser = ArgumentParser()
     parser.add_argument(
         'target',
