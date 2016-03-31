@@ -61,7 +61,7 @@ def fetch(payload):
     from contextlib import closing
     with closing(multiprocessing.Pool(concurrent)) as pool:
         for service_item in payload:
-            print(service_item['title'])
+            print(service_item['title'].encode('utf8', 'ignore'))
             print(', '.join(service_item['domains']))
             for name, ips in service_item['ips'].items():
                 ips = pool.map(request, map(handle_ip, ips * testing_times))
