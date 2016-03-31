@@ -1,5 +1,6 @@
 [
     {
+        "title": "Apple Music",
         "domains": [
             "aod.itunes.apple.com",
             "streamingaudio.itunes.apple.com"
@@ -58,7 +59,6 @@
                 "17.253.83.207",
                 "17.253.83.208"
             ]
-        },
-        "title": "Apple Music"
+        }
     }
 ]
