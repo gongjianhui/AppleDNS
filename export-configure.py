@@ -6,12 +6,8 @@ import json
 import os.path
 import sys
 from argparse import ArgumentParser
-from collections import defaultdict
 
 from io import open
-
-if sys.version_info[0] == 2:
-    str = unicode
 
 formats = {
     'hosts': '{ip:<15} {domain}',
@@ -34,16 +30,20 @@ def check_requirements():
 
 
 def find_fast_ip(ips):
-    table = defaultdict(list)
-    for item in sum(ips.values(), []):
-        table[item['ip']].append(item['delta'])
-    table = map(
-        lambda item: (item[0], sum(item[1]) / len(item[1])),
-        table.items()
+    def handle_delta(item):
+        ip, delta = item
+        return ip, sum(delta) / len(delta)
+
+    def handle_ips(item):
+        return map(handle_delta, item.items())
+
+    iptable = sorted(
+        sum(map(handle_ips, ips.values()), []),
+        key=lambda item: item[1]
     )
-    table = sorted(table, key=lambda item: item[1])
-    if len(table):
-        ip, rt = table[0]
+
+    if len(iptable):
+        ip, rt = iptable[0]
         return ip
 
 

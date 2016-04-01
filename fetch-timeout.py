@@ -9,6 +9,7 @@ import random
 import socket
 import sys
 from argparse import ArgumentParser
+from collections import defaultdict
 from contextlib import closing
 from datetime import datetime
 
@@ -22,7 +23,7 @@ else:
 
 timeout = 400  # unit ms
 concurrent = 10
-testing_times = 10
+testing_times = 20
 
 
 def check_requirements():
@@ -65,22 +66,24 @@ def fetch(payload):
         address = urlparse('http://%s' % str(target))
         return address.hostname, address.port or 80
 
+    def handle_ipset(ips):
+        ips = ips * testing_times
+        random.shuffle(ips)
+        return ips
+
     with closing(multiprocessing.Pool(concurrent)) as pool:
         for service_item in payload:
             print(str(service_item['title']))
             print(', '.join(service_item['domains']))
             for name, ips in service_item['ips'].items():
-                ips = ips * testing_times
-                random.shuffle(ips)
-                ips = pool.map(request, map(handle_ip, ips))
-                ips = sorted(
-                    ({'ip': ip, 'delta': delta} for ip, delta in ips if delta),
-                    key=lambda item: item['delta']
-                )
-                service_item['ips'][name] = ips
+                request_payload = map(handle_ip, handle_ipset(ips))
+                ipset = defaultdict(list)
                 print('\t%s' % name)
-                for item in ips:
-                    print('\t\t%(ip)-15s\t%(delta)sms' % item)
+                for ip, delta in pool.imap(request, request_payload):
+                    ipset[ip].append(delta)
+                    if delta:
+                        print('\t\t%-15s\t%sms' % (ip, delta))
+                service_item['ips'][name] = ipset
     return payload
 
 
