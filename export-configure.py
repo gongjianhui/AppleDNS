@@ -35,10 +35,10 @@ def find_fast_ip(ips):
         return ip, sum(delta) / len(delta)
 
     def handle_ips(item):
-        return map(handle_delta, item.items())
+        return list(map(handle_delta, item.items()))
 
     iptable = sorted(
-        sum(map(handle_ips, ips.values()), []),
+        sum(list(map(handle_ips, ips.values())), []),
         key=lambda item: item[1]
     )
 
