@@ -6,6 +6,7 @@ import json
 import os.path
 import sys
 from argparse import ArgumentParser
+from itertools import ifilter
 
 from io import open
 
@@ -32,32 +33,39 @@ def check_requirements():
 def find_fast_ip(ips):
     def handle_delta(item):
         ip, delta = item
-        return ip, sum(delta) / len(delta)
+        delta = list(ifilter(lambda item: item, delta))
+        if len(delta):
+            return ip, sum(delta) / float(len(delta))
+        return ip, float('NaN')
 
     def handle_ips(item):
         return list(map(handle_delta, item.items()))
 
+    def sorted_key(item):
+        ip, avg_rtt = item
+        return avg_rtt
+
     iptable = sorted(
         sum(list(map(handle_ips, ips.values())), []),
-        key=lambda item: item[1]
+        key=sorted_key
     )
 
     if len(iptable):
-        ip, rt = iptable[0]
-        return ip
+        ip, avg_rtt = iptable[0]
+        return ip, avg_rtt
 
 
 def export(payload, target):
     if not payload:
         return
     for service in sorted(payload, key=lambda item: item['title']):
-        fast_ip = find_fast_ip(service['ips'])
-        print('# %(title)s' % service)
+        ip, avg_rtt = find_fast_ip(service['ips'])
+        print('# %s (Avg RTT: %sms)' % (service['title'], avg_rtt))
         for domain in sorted(service['domains'], key=len):
             template = '%s'
-            if not fast_ip:
+            if not ip:
                 template = '# %s'
-            print(template % formats[target].format(domain=domain, ip=fast_ip))
+            print(template % formats[target].format(domain=domain, ip=ip))
 
 
 def load_payload():
