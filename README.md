@@ -18,13 +18,13 @@ AppleDNS 通过收集 Apple 在全中国几乎所有省级行政区的 CDN IP �
 cd /path/to/AppleDNS
 # 切到 AppleDNS 的文件夹
 
-python fetch-timeout.py ChinaUnicom/ChinaNet/CMCC.json 
+./fetch-timeout.py ChinaUnicom/ChinaNet/CMCC.json 
 
 # Python 2.7+ / Python 3.4+ 兼容脚本
 #（请选择你的运营商对应文件 ChinaUnicom 联通、ChinaNet 电信、CMCC 移动）
 # 确认即开始进行测速，需等待数秒 
 
-python export-configure.py {surge,hosts,merlin}
+./export-configure.py {surge,hosts,merlin}
 
 # 生成各种形式的配置(如 Surge 执行 python export-configure.py surge)
 
