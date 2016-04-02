@@ -1,6 +1,14 @@
-#!/usr/bin/env python3
+#!/usr/bin/env python
 # -*- coding: utf-8 -*-
-from __future__ import unicode_literals
+from __future__ import print_function, unicode_literals
+
+import json
+import os.path
+import sys
+from argparse import ArgumentParser
+from itertools import ifilter
+
+from io import open
 
 formats = {
     'hosts': '{ip:<15} {domain}',
@@ -10,8 +18,6 @@ formats = {
 
 
 def check_requirements():
-    import sys
-
     def check_python_version():
         if sys.hexversion >= 0x2000000 and sys.hexversion <= 0x2070000:
             print('your "python" lower than 2.7.0 upgrade.')
@@ -25,36 +31,44 @@ def check_requirements():
 
 
 def find_fast_ip(ips):
-    from collections import defaultdict
-    table = defaultdict(list)
-    for item in sum(ips.values(), []):
-        table[item['ip']].append(item['delta'])
-    table = map(
-        lambda item: (item[0], sum(item[1]) / len(item[1])),
-        table.items()
+    def handle_delta(item):
+        ip, delta = item
+        delta = list(ifilter(lambda item: item, delta))
+        if len(delta):
+            return ip, sum(delta) / float(len(delta))
+        return ip, float('NaN')
+
+    def handle_ips(item):
+        return list(map(handle_delta, item.items()))
+
+    def sorted_key(item):
+        ip, avg_rtt = item
+        return avg_rtt
+
+    iptable = sorted(
+        sum(list(map(handle_ips, ips.values())), []),
+        key=sorted_key
     )
-    if len(table):
-        ip, rt = sorted(table, key=lambda item: item[1])[0]
-        return ip
+
+    if len(iptable):
+        ip, avg_rtt = iptable[0]
+        return ip, avg_rtt
 
 
 def export(payload, target):
     if not payload:
         return
     for service in sorted(payload, key=lambda item: item['title']):
-        fast_ip = find_fast_ip(service['ips'])
-        print('# %(title)s' % service)
+        ip, avg_rtt = find_fast_ip(service['ips'])
+        print('# %s (Avg RTT: %sms)' % (service['title'], avg_rtt))
         for domain in sorted(service['domains'], key=len):
             template = '%s'
-            if not fast_ip:
+            if not ip:
                 template = '# %s'
-            print(template % formats[target].format(domain=domain, ip=fast_ip))
+            print(template % formats[target].format(domain=domain, ip=ip))
 
 
 def load_payload():
-    import json
-    import os.path
-    from io import open
     target_filename = 'apple-cdn-speed.report'
     if os.path.exists(target_filename):
         return json.load(open(target_filename, encoding='UTF-8'))
@@ -62,7 +76,6 @@ def load_payload():
 
 
 def main():
-    from argparse import ArgumentParser
     parser = ArgumentParser()
     parser.add_argument(
         'target',
