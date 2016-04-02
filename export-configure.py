@@ -6,6 +6,7 @@ import json
 import os.path
 import sys
 from argparse import ArgumentParser
+from itertools import ifilter
 
 from io import open
 
@@ -32,7 +33,7 @@ def check_requirements():
 def find_fast_ip(ips):
     def handle_delta(item):
         ip, delta = item
-        delta = list(filter(lambda item: item, delta))
+        delta = list(ifilter(lambda item: item, delta))
         if len(delta):
             return ip, sum(delta) / float(len(delta))
         return ip, float('NaN')
