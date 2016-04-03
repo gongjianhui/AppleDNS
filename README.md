@@ -32,18 +32,21 @@ python export-configure.py {surge,hosts,merlin}
 # ** Surge 用户请在配置文件 [Rule] 前新建 [Host] 将生成的配置放入 [Host] 后（[Rule] 前）。**
 ```
 
-
-设置完成后可按需清理 DNS 缓存
+## 设置完成后可按需清理 DNS 缓存
 
 OS X：[#41](../../issues/41)
 
 Windows：<kbd>ipconfig /flushdns</kbd>
 
-
 ## DNSMASQ 用户和 MERLIN 用户警告：
-请删除配置文件中的 
+
+请删除配置文件中的
+
+```ini
 address=/itunes.apple.com/***
-该配置在 DNSMASQ 中意味着将 itunes.apple.com 泛解析！
+```
+
+该配置在 DNSMASQ 中意味着将 `itunes.apple.com` 泛解析！
 
 ## 其他
 
