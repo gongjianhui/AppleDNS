@@ -30,16 +30,16 @@ python export-configure.py {surge,hosts,merlin}
 
 # ** 将配置文件放到相应的位置（HOSTS 放入系统相应位置、路由器用户请独立配置路由器后台）**
 # ** Surge 用户请在配置文件 [Rule] 前新建 [Host] 将生成的配置放入 [Host] 后（[Rule] 前）。**
-
-
-# 设置完成后可按需清理 DNS 缓存
-
-# OS X
-sudo killall -HUP mDNSResponder
-
-# Windoges 系统
-ipconfig /flushdns
 ```
+
+
+设置完成后可按需清理 DNS 缓存
+
+OS X：[#41](../../issues/41)
+
+Windows：<kbd>ipconfig /flushdns</kbd>
+
+
 ## DNSMASQ 用户和 MERLIN 用户警告：
 请删除配置文件中的 
 address=/itunes.apple.com/***
@@ -55,6 +55,8 @@ address=/itunes.apple.com/***
 ![](https://s3-up.gongjianhui.com/money.png?a)
 ### 支付宝: i@gongjianhui.com
 ### BTC: 1Jianhui1ZUDHDCz1TGzGH2rWaxas1GS9S
+
+-----------------------------------------------------
 
 Apple、App Store、Apple Music 和 iTunes 是 Apple Inc. 在美国和其他 国家/地区的注册商标。
 
