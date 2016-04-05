@@ -49,6 +49,7 @@ address=/itunes.apple.com/***
 该配置在 DNSMASQ 中意味着将 `itunes.apple.com` 泛解析！
 
 ## 其他
+多运营商切换用户可以尝试配合 ［SwitchHosts!］(https://github.com/oldj/SwitchHosts) 使用。
 
 手动操作指南：请查看 OLD 分支。
 
