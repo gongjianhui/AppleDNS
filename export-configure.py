@@ -6,6 +6,7 @@ import json
 import os.path
 import sys
 from argparse import ArgumentParser
+from math import isnan
 
 from io import open
 
@@ -59,7 +60,9 @@ def export(payload, target):
         return
     for service in sorted(payload, key=lambda item: item['title']):
         ip, avg_rtt = find_fast_ip(service['ips'])
-        print('# %s (Avg RTT: %sms)' % (service['title'], avg_rtt))
+        if isnan(avg_rtt):
+            continue
+        print('# %s (Avg RTT: %.3fms)' % (service['title'], avg_rtt))
         for domain in sorted(service['domains'], key=len):
             template = '%s'
             if not ip:
