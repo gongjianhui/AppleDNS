@@ -12,6 +12,7 @@ from contextlib import closing
 from datetime import datetime
 from multiprocessing.dummy import Pool as ParallelPool
 from socket import AF_INET, IPPROTO_TCP, SOCK_STREAM, TCP_NODELAY, socket
+from timeit import timeit
 
 from io import open
 
@@ -35,25 +36,24 @@ def check_requirements():
     return check_python_version()
 
 
+def request_with_socket(host, port, timeout):
+    with closing(socket(AF_INET, SOCK_STREAM)) as connection:
+        connection.setsockopt(IPPROTO_TCP, TCP_NODELAY, 1)
+        connection.settimeout(timeout)
+        connection.connect((host, port))
+
+
 def request(target):
     host, port, timeout = target
 
-    with closing(socket(AF_INET, SOCK_STREAM)) as connection:
-        try:
-            begin_time = datetime.now()
-
-            connection.setsockopt(IPPROTO_TCP, TCP_NODELAY, 1)
-            connection.settimeout(timeout)
-            connection.connect((host, port))
-
-            end_time = datetime.now()
-
-            delta = end_time - begin_time
-
-            rtt = (delta.seconds * 1000) + (delta.microseconds / 1000.0)
-            return host, rtt
-        except:
-            return host, None
+    try:
+        rtt = timeit(
+            lambda: request_with_socket(host, port, timeout),
+            number=1
+        )
+        return host, rtt * 1000
+    except:
+        return host, None
 
 
 def fetch(payload, timeout, concurrent, testing_times):
@@ -76,16 +76,15 @@ def fetch(payload, timeout, concurrent, testing_times):
 
             iptable = service_item['ips']
             for name, ips in iptable.items():
-                request_payload = map(handle_ip, handle_ipset(ips))
-                iptable[name] = defaultdict(list)
-
                 print('\t%s' % name)
 
+                iptable[name] = defaultdict(list)
+                request_payload = map(handle_ip, handle_ipset(ips))
                 for ip, delta in pool.imap(request, request_payload):
                     iptable[name][ip].append(delta)
                     if not delta:
                         continue
-                    print('\t\t%-15s\t%sms' % (ip, delta))
+                    print('\t\t%-15s\t%.3fms' % (ip, delta))
     return payload
 
 
