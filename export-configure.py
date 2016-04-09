@@ -79,7 +79,6 @@ def main():
     parser.add_argument(
         'target',
         help='output target',
-        default='surge',
         choices=sorted(formats.keys(), key=len)
     )
 
