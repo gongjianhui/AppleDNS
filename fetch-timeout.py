@@ -3,7 +3,6 @@
 from __future__ import print_function, unicode_literals
 
 import json
-import multiprocessing
 import os.path
 import random
 import socket
@@ -12,6 +11,7 @@ from argparse import ArgumentParser
 from collections import defaultdict
 from contextlib import closing
 from datetime import datetime
+from multiprocessing.dummy import Pool as ParallelPool
 
 from io import open
 
@@ -20,10 +20,6 @@ if sys.version_info[0] == 2:
     str = unicode
 else:
     from urllib.parse import urlparse
-
-timeout = 400  # unit ms
-concurrent = 10
-testing_times = 20
 
 
 def check_requirements():
@@ -40,12 +36,12 @@ def check_requirements():
 
 
 def request(target):
-    host, port = target
+    host, port, timeout = target
     try:
         begin_time = datetime.now()
 
         conn = socket.socket()
-        conn.settimeout(timeout / 1000.0)
+        conn.settimeout(timeout)
         conn.connect((host, port))
 
         end_time = datetime.now()
@@ -58,20 +54,20 @@ def request(target):
         return host, False
 
 
-def fetch(payload):
+def fetch(payload, timeout, concurrent, testing_times):
     if not payload:
         return
 
     def handle_ip(target):
         address = urlparse('http://%s' % str(target))
-        return address.hostname, address.port or 80
+        return address.hostname, address.port or 80, timeout
 
     def handle_ipset(ips):
         ips = ips * testing_times
         random.shuffle(ips)
         return ips
 
-    with closing(multiprocessing.Pool(concurrent)) as pool:
+    with closing(ParallelPool(concurrent)) as pool:
         for service_item in payload:
             print(str(service_item['title']))
             print(', '.join(service_item['domains']))
@@ -107,10 +103,50 @@ def save_result(payload):
 
 def main():
     parser = ArgumentParser()
-    parser.add_argument('payload', help='payload')
+    parser.add_argument(
+        'payload',
+        type=str,
+        help='payload'
+    )
+
+    parser.add_argument(
+        '--timeout',
+        type=int,
+        help='timeout (default: 400) (unit ms)',
+        dest='timeout',
+        default=400
+    )
+
+    parser.add_argument(
+        '--concurrent',
+        type=int,
+        help='concurrent (default: 10)',
+        dest='concurrent',
+        default=10
+    )
+
+    parser.add_argument(
+        '--testing_times',
+        type=int,
+        help='testing times (default: 20)',
+        dest='testing_times',
+        default=20
+    )
+
+    if len(sys.argv) == 1:
+        parser.print_help()
+        sys.exit(1)
+
     args = parser.parse_args()
 
-    save_result(fetch(load_payload(args.payload)))
+    save_result(
+        fetch(
+            load_payload(args.payload),
+            timeout=args.timeout / 1000.0,
+            concurrent=args.concurrent,
+            testing_times=args.testing_times
+        )
+    )
 
 
 if __name__ == '__main__' and check_requirements():
