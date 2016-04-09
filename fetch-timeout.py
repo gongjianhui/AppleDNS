@@ -5,13 +5,13 @@ from __future__ import print_function, unicode_literals
 import json
 import os.path
 import random
-import socket
 import sys
 from argparse import ArgumentParser
 from collections import defaultdict
 from contextlib import closing
 from datetime import datetime
 from multiprocessing.dummy import Pool as ParallelPool
+from socket import AF_INET, IPPROTO_TCP, SOCK_STREAM, TCP_NODELAY, socket
 
 from io import open
 
@@ -37,21 +37,23 @@ def check_requirements():
 
 def request(target):
     host, port, timeout = target
-    try:
-        begin_time = datetime.now()
 
-        conn = socket.socket()
-        conn.settimeout(timeout)
-        conn.connect((host, port))
+    with closing(socket(AF_INET, SOCK_STREAM)) as connection:
+        try:
+            begin_time = datetime.now()
 
-        end_time = datetime.now()
+            connection.setsockopt(IPPROTO_TCP, TCP_NODELAY, 1)
+            connection.settimeout(timeout)
+            connection.connect((host, port))
 
-        delta = end_time - begin_time
+            end_time = datetime.now()
 
-        rt = (delta.seconds * 1000) + (delta.microseconds / 1000.0)
-        return host, rt
-    except socket.error as err:
-        return host, False
+            delta = end_time - begin_time
+
+            rtt = (delta.seconds * 1000) + (delta.microseconds / 1000.0)
+            return host, rtt
+        except:
+            return host, None
 
 
 def fetch(payload, timeout, concurrent, testing_times):
@@ -71,15 +73,19 @@ def fetch(payload, timeout, concurrent, testing_times):
         for service_item in payload:
             print(str(service_item['title']))
             print(', '.join(service_item['domains']))
-            for name, ips in service_item['ips'].items():
+
+            iptable = service_item['ips']
+            for name, ips in iptable.items():
                 request_payload = map(handle_ip, handle_ipset(ips))
-                ipset = defaultdict(list)
+                iptable[name] = defaultdict(list)
+
                 print('\t%s' % name)
+
                 for ip, delta in pool.imap(request, request_payload):
-                    ipset[ip].append(delta)
-                    if delta:
-                        print('\t\t%-15s\t%sms' % (ip, delta))
-                service_item['ips'][name] = ipset
+                    iptable[name][ip].append(delta)
+                    if not delta:
+                        continue
+                    print('\t\t%-15s\t%sms' % (ip, delta))
     return payload
 
 
@@ -91,7 +97,7 @@ def load_payload(path):
 
 def save_result(payload):
     target_filename = 'apple-cdn-speed.report'
-    with open(target_filename, 'w', encoding='utf-8') as fp:
+    with open(target_filename, 'w', encoding='UTF-8') as fp:
         report_data = json.dumps(
             payload,
             sort_keys=True,
