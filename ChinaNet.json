@@ -72,8 +72,8 @@
                 "116.211.83.201:443",
                 "116.211.123.211:443",
                 "117.34.47.33:443",
-                "117.34.48.54:433",
                 "117.34.48.54:443",
+                "117.34.48.54:433",
                 "118.118.171.155:443",
                 "119.84.69.26:443",
                 "119.84.69.40:443",
@@ -138,8 +138,8 @@
         "domains": [
             "aod.itunes.apple.com",
             "mvod.itunes.apple.com",
-            "iosapps.itunes.apple.com",
             "osxapps.itunes.apple.com",
+            "iosapps.itunes.apple.com",
             "streamingaudio.itunes.apple.com"
         ],
         "ips": {
