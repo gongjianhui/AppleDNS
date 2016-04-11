@@ -89,13 +89,16 @@ def fetch(payload, timeout, concurrent, testing_times):
                     if not delta:
                         continue
                     print('\t\t%-15s\t%.3fms' % (ip, delta))
-    return payload
+    save_result(payload)
 
 
 def load_payload(path):
     if os.path.exists(path):
         with open(path, encoding='UTF-8') as fp:
             return json.loads(fp.read())
+    else:
+        print('"%s" file not found.' % path)
+        sys.exit(1)
 
 
 def save_result(payload):
@@ -148,13 +151,11 @@ def main():
 
     args = parser.parse_args()
 
-    save_result(
-        fetch(
-            load_payload(args.payload),
-            timeout=args.timeout / 1000.0,
-            concurrent=args.concurrent,
-            testing_times=args.testing_times
-        )
+    fetch(
+        load_payload(args.payload),
+        timeout=args.timeout / 1000.0,
+        concurrent=args.concurrent,
+        testing_times=args.testing_times
     )
 
 
