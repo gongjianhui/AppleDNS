@@ -84,7 +84,7 @@ def fetch(payload, timeout, concurrent, testing_times):
 
                 iptable[name] = defaultdict(list)
                 request_payload = map(handle_ip, handle_ipset(ips))
-                for ip, delta in pool.imap(request, request_payload):
+                for ip, delta in pool.imap_unordered(request, request_payload):
                     iptable[name][ip].append(delta)
                     if not delta:
                         continue
