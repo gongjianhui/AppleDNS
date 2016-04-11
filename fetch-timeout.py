@@ -12,7 +12,7 @@ from contextlib import closing
 from datetime import datetime
 from multiprocessing.dummy import Pool as ParallelPool
 from socket import AF_INET, IPPROTO_TCP, SOCK_STREAM, TCP_NODELAY, socket
-from timeit import timeit
+from time import time
 
 from io import open
 
@@ -43,14 +43,18 @@ def request_with_socket(host, port, timeout):
         connection.connect((host, port))
 
 
+def timeit(callback):
+    begin_time = time()
+    callback()
+    end_time = time()
+    return end_time - begin_time
+
+
 def request(target):
     host, port, timeout = target
 
     try:
-        rtt = timeit(
-            lambda: request_with_socket(host, port, timeout),
-            number=1
-        )
+        rtt = timeit(lambda: request_with_socket(host, port, timeout))
         return host, rtt * 1000
     except:
         return host, None
