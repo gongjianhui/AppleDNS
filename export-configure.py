@@ -6,7 +6,9 @@ import json
 import os.path
 import sys
 from argparse import ArgumentParser
+from collections import namedtuple
 from math import isnan
+from operator import attrgetter
 
 from io import open
 
@@ -30,25 +32,23 @@ def check_requirements():
     return check_python_version()
 
 
-def find_fast_ip(ips):
-    def handle_delta(item):
-        ip, delta = item
-        delta = list(filter(lambda item: item, delta))
-        if len(delta):
-            return ip, sum(delta) / float(len(delta))
-        return ip, float('NaN')
+def find_fast_ip(ipset):
+    Item = namedtuple('Item', ['ip', 'avg_rtt'])
 
-    def handle_ips(item):
-        return list(map(handle_delta, item.items()))
+    def handle_delta(items):
+        def handle(item):
+            ip, delta = item
+            delta = list(item for item in delta if item != None)
+            if len(delta):
+                return Item(ip, sum(delta) / float(len(delta)))
+            return Item(ip, float('NaN'))
+        return list(map(handle, items.items()))
 
-    def sorted_key(item):
-        ip, avg_rtt = item
-        return avg_rtt
+    def handle_sorted():
+        data = sum(list(map(handle_delta, ipset.values())), [])
+        return sorted(data, key=attrgetter('avg_rtt'))
 
-    iptable = sorted(
-        sum(list(map(handle_ips, ips.values())), []),
-        key=sorted_key
-    )
+    iptable = handle_sorted()
 
     if len(iptable):
         ip, avg_rtt = iptable[0]
@@ -64,9 +64,7 @@ def export(payload, target):
             continue
         print('# %s (Avg RTT: %.3fms)' % (service['title'], avg_rtt))
         for domain in sorted(service['domains'], key=len):
-            template = '%s'
-            if not ip:
-                template = '# %s'
+            template = '%s' if ip else '# %s'
             print(template % formats[target].format(domain=domain, ip=ip))
 
 
