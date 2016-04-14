@@ -33,36 +33,38 @@ def check_requirements():
 
 
 def find_fast_ip(ipset):
-    Item = namedtuple('Item', ['ip', 'avg_rtt'])
+    Item = namedtuple('Item', ['tag', 'ip', 'avg_rtt'])
 
     def handle_delta(items):
+        tag, delta_map = items
+
         def handle(item):
             ip, delta = item
             delta = list(item for item in delta if item != None)
             if len(delta):
-                return Item(ip, sum(delta) / float(len(delta)))
-            return Item(ip, float('NaN'))
-        return list(map(handle, items.items()))
+                return Item(tag, ip, sum(delta) / float(len(delta)))
+            return Item(tag, ip, float('NaN'))
+
+        return list(map(handle, delta_map.items()))
 
     def handle_sorted():
-        data = sum(list(map(handle_delta, ipset.values())), [])
+        data = sum(list(map(handle_delta, ipset.items())), [])
         return sorted(data, key=attrgetter('avg_rtt'))
 
     iptable = handle_sorted()
 
     if len(iptable):
-        ip, avg_rtt = iptable[0]
-        return ip, avg_rtt
+        return iptable[0]
 
 
 def export(payload, target):
     if not payload:
         return
     for service in sorted(payload, key=lambda item: item['title']):
-        ip, avg_rtt = find_fast_ip(service['ips'])
+        tag, ip, avg_rtt = find_fast_ip(service['ips'])
         if isnan(avg_rtt):
             continue
-        print('# %s (Avg RTT: %.3fms)' % (service['title'], avg_rtt))
+        print('# %s [%s] (Avg RTT: %.3fms)' % (service['title'], tag, avg_rtt))
         for domain in sorted(service['domains'], key=len):
             template = '%s' if ip else '# %s'
             print(template % formats[target].format(domain=domain, ip=ip))
