@@ -7,6 +7,7 @@ import os.path
 import sys
 from argparse import ArgumentParser
 from collections import namedtuple
+from datetime import datetime
 from math import isnan
 from operator import attrgetter
 
@@ -60,6 +61,7 @@ def find_fast_ip(ipset):
 def export(payload, target):
     if not payload:
         return
+    print('# Build Date: %s (UTC)' % datetime.utcnow().isoformat())
     for service in sorted(payload, key=lambda item: item['title']):
         tag, ip, avg_rtt = find_fast_ip(service['ips'])
         if isnan(avg_rtt):
