@@ -121,8 +121,8 @@
         "title": "API-HK-Akamai-2-AMRadio",
         "domains": [
             "radio.itunes.apple.com",
-            "radio-services.itunes.apple.com",
-            "radio-activity.itunes.apple.com"
+            "radio-activity.itunes.apple.com",
+            "radio-services.itunes.apple.com"
         ],
         "ips": {
             "HongKong1": [
@@ -137,8 +137,8 @@
         "domains": [
             "aod.itunes.apple.com",
             "mvod.itunes.apple.com",
-            "osxapps.itunes.apple.com",
             "iosapps.itunes.apple.com",
+            "osxapps.itunes.apple.com",
             "streamingaudio.itunes.apple.com"
         ],
         "ips": {

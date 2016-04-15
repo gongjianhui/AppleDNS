@@ -2,8 +2,8 @@
     {
         "title": "API-1-ChinaNetCenter",
         "domains": [
-            "su.itunes.apple.com",
             "se.itunes.apple.com",
+            "su.itunes.apple.com",
             "upp.itunes.apple.com",
             "play.itunes.apple.com",
             "client-api.itunes.apple.com"
@@ -132,8 +132,8 @@
         "domains": [
             "aod.itunes.apple.com",
             "mvod.itunes.apple.com",
-            "osxapps.itunes.apple.com",
             "iosapps.itunes.apple.com",
+            "osxapps.itunes.apple.com",
             "streamingaudio.itunes.apple.com"
         ],
         "ips": {
