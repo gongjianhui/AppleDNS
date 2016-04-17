@@ -1,6 +1,6 @@
 # AppleDNS V3.0.5  真的快，快出声。
 **[（作者是个 16 岁的少年，能请我喝一杯咖啡吗？）](https://github.com/gongjianhui/AppleDNS#给我资持大家资不资磁请我喝杯咖啡好不好少年)**
-
+近期 iTunes 服务在中国集体爆炸，请耐心等待 Apple 恢复服务。（甩锅完毕）
 （如果你实在看不懂，找作者付费 42 元给你配置吧。邮箱和 iMessage:i@gongjianhui.com, Telegram@gongjianhui）
 
 AppleDNS 通过收集 Apple 在全中国几乎所有省级行政区的 CDN IP 列表，解决 App Store / Mac App Store / iTunes Store / Apple Music / iBooks / TestFlight 在中国部分地区速度缓慢的问题。
