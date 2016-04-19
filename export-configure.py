@@ -22,10 +22,10 @@ formats = {
 
 def check_requirements():
     def check_python_version():
-        if sys.hexversion >= 0x2000000 and sys.hexversion <= 0x2070000:
+        if 0x2000000 <= sys.hexversion <= 0x2070000:
             print('your "python" lower than 2.7.0 upgrade.')
             return False
-        if sys.hexversion >= 0x3000000 and sys.hexversion <= 0x3040000:
+        elif 0x3000000 <= sys.hexversion <= 0x3040000:  # Is Python 3.5.1 not acceptable??
             print('your "python" lower than 3.4.0 upgrade.')
             return False
         return True
@@ -42,7 +42,7 @@ def find_fast_ip(ipset):
         def handle(item):
             ip, delta = item
             delta = list(item for item in delta if item != None)
-            if len(delta):
+            if delta:
                 return Item(tag, ip, sum(delta) / float(len(delta)))
             return Item(tag, ip, float('NaN'))
 
@@ -53,9 +53,7 @@ def find_fast_ip(ipset):
         return sorted(data, key=attrgetter('avg_rtt'))
 
     iptable = handle_sorted()
-
-    if len(iptable):
-        return iptable[0]
+    return iptable[0] if iptable else None
 
 
 def export(payload, target):
