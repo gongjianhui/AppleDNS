@@ -25,7 +25,7 @@ def check_requirements():
         if 0x2000000 <= sys.hexversion <= 0x2070000:
             print('your "python" lower than 2.7.0 upgrade.')
             return False
-        elif 0x3000000 <= sys.hexversion <= 0x3040000:  # Is Python 3.5.1 not acceptable??
+        if 0x3000000 <= sys.hexversion <= 0x3040000:
             print('your "python" lower than 3.4.0 upgrade.')
             return False
         return True

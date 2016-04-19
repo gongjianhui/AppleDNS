@@ -123,7 +123,7 @@ def main():
     parser.add_argument(
         '--timeout',
         type=int,
-        help='timeout (default: 400) (unit ms)',
+        help='timeout (default: %(default)s) (unit ms)',
         dest='timeout',
         default=400
     )
@@ -131,7 +131,7 @@ def main():
     parser.add_argument(
         '--concurrent',
         type=int,
-        help='concurrent (default: 10)',
+        help='concurrent (default: %(default)s)',
         dest='concurrent',
         default=10
     )
@@ -139,7 +139,7 @@ def main():
     parser.add_argument(
         '--testing_times',
         type=int,
-        help='testing times (default: 20)',
+        help='testing times (default: %(default)s)',
         dest='testing_times',
         default=20
     )
