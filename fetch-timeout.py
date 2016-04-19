@@ -25,10 +25,10 @@ else:
 
 def check_requirements():
     def check_python_version():
-        if sys.hexversion >= 0x2000000 and sys.hexversion <= 0x2070000:
+        if 0x2000000 <= sys.hexversion <= 0x2070000:
             print('your "python" lower than 2.7.0 upgrade.')
             return False
-        if sys.hexversion >= 0x3000000 and sys.hexversion <= 0x3040000:
+        if 0x3000000 <= sys.hexversion <= 0x3040000:
             print('your "python" lower than 3.4.0 upgrade.')
             return False
         return True
@@ -69,7 +69,7 @@ def fetch(payload, timeout, concurrent, testing_times):
         return address.hostname, address.port or 80, timeout
 
     def handle_ipset(ips):
-        ips = ips * testing_times
+        ips *= testing_times
         random.shuffle(ips)
         return ips
 
@@ -86,9 +86,8 @@ def fetch(payload, timeout, concurrent, testing_times):
                 request_payload = map(handle_ip, handle_ipset(ips))
                 for ip, delta in pool.imap_unordered(request, request_payload):
                     iptable[name][ip].append(delta)
-                    if not delta:
-                        continue
-                    print('\t\t%-15s\t%.3fms' % (ip, delta))
+                    if delta:
+                        print('\t\t%-15s\t%.3fms' % (ip, delta))
     save_result(payload)
 
 
