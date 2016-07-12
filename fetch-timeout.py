@@ -141,7 +141,7 @@ def main():
         type=int,
         help='testing times (default: %(default)s)',
         dest='testing_times',
-        default=20
+        default=50
     )
 
     if len(sys.argv) == 1:
