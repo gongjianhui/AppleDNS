@@ -1,0 +1,54 @@
+[
+    {
+        "title": "API-1-ChinaNetCenter",
+        "domains": [
+            "se.itunes.apple.com",
+            "su.itunes.apple.com",
+            "upp.itunes.apple.com",
+            "play.itunes.apple.com",
+            "client-api.itunes.apple.com"
+        ]
+    },
+    {
+        "title": "API-2-ChinaCache",
+        "domains": [
+            "itunes.apple.com",
+            "init.itunes.apple.com"
+        ]
+    },
+    {
+        "title": "API-HK-Akamai-1",
+        "domains": [
+            "search.itunes.apple.com"
+        ]
+    },
+    {
+        "title": "API-HK-Akamai-2-AMRadio",
+        "domains": [
+            "radio.itunes.apple.com",
+            "radio-activity.itunes.apple.com",
+            "radio-services.itunes.apple.com"
+        ]
+    },
+    {
+        "title": "Apple Music Streaming and iOS/OS X Apps",
+        "domains": [
+            "aod.itunes.apple.com",
+            "mvod.itunes.apple.com",
+            "streamingaudio.itunes.apple.com"
+        ]
+    },
+    {
+        "domains": [
+            "itsliveradio.apple.com"
+        ],
+        "title": "Beats 1 Radio (Not Available in Mainland China)"
+    },
+    {
+        "domains": [
+            "aod.itunes.apple.com",
+            "streamingaudio.itunes.apple.com"
+        ],
+        "title": "Apple Music"
+    }
+]
