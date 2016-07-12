@@ -101,7 +101,7 @@ def load_payload(path):
 
 
 def save_result(payload):
-    target_filename = 'apple-cdn-speed.report'
+    target_filename = 'Apple-CDN-Speed.json'
     with open(target_filename, 'w', encoding='UTF-8') as fp:
         report_data = json.dumps(
             payload,
@@ -156,7 +156,6 @@ def main():
         concurrent=args.concurrent,
         testing_times=args.testing_times
     )
-
 
 if __name__ == '__main__' and check_requirements():
     main()
