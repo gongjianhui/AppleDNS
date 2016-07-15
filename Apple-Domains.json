@@ -37,18 +37,5 @@
             "mvod.itunes.apple.com",
             "streamingaudio.itunes.apple.com"
         ]
-    },
-    {
-        "domains": [
-            "itsliveradio.apple.com"
-        ],
-        "title": "Beats 1 Radio (Not Available in Mainland China)"
-    },
-    {
-        "domains": [
-            "aod.itunes.apple.com",
-            "streamingaudio.itunes.apple.com"
-        ],
-        "title": "Apple Music"
     }
 ]
