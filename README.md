@@ -1,8 +1,10 @@
 # AppleDNS V4
 
-AppleDNS 通过收集 Apple 在全中国几乎所有省级行政区的 CDN IP 列表，解决 App Store / Mac App Store / iTunes Store / Apple Music / iBooks / TestFlight 在中国部分地区速度缓慢的问题。
+AppleDNS 通过本地 DNS 查询收集 Apple 每一组域名的可用 IP，通过 TCPING 的方式检测链路质量，解决 App Store / Mac App Store / iTunes Store / Apple Music / iBooks / TestFlight 在中国部分地区速度缓慢的问题。
 
 感谢一位不愿意透露姓名的 Telegram 用户提供的 Python 生成脚本 (CC0 授权)。
+
+**TCPING 方式并不适合在路由器使用了 ss-redir / redsocks2 的用户。**
 
 ## 安装依赖：
 
