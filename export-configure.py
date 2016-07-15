@@ -72,7 +72,7 @@ def export(payload, target):
 
 
 def load_payload():
-    target_filename = 'apple-cdn-speed.report'
+    target_filename = 'Apple-CDN-Speed.json'
     if os.path.exists(target_filename):
         return json.load(open(target_filename, encoding='UTF-8'))
     print('please run "fetch-timeout.py" build "%s".' % target_filename)
