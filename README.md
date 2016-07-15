@@ -4,7 +4,14 @@ AppleDNS 通过收集 Apple 在全中国几乎所有省级行政区的 CDN IP �
 
 感谢一位不愿意透露姓名的 Telegram 用户提供的 Python 生成脚本 (CC0 授权)。
 
+## 安装依赖：
+
+```bash
+pip install dnspython
+```
+
 ## 生成教程：
+
 确保你系统中安装了 Python3 或者 Python2 (OS X 和其他 Linux 发行版内建)
 
 ```bash
