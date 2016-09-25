@@ -4,7 +4,7 @@ AppleDNS 通过收集 Apple 在中国的 CDN 数据，解决 App Store / Mac App
 
 （配合可靠的代理服务器可以实现对 iCloud 相关服务的加速，请查看 ProxyConfig.md 文件）
 
-本配置文件目前对联通、电信、移动用户友好，
+本配置文件目前对联通、电信用户友好，移动用户可直接使用 CMCC-Intl.md 文件中的配置。
 鹏博士马甲集团（长城宽带、宽带通、电信通）及其他运营商可以尝试联系作者（Telegram @gongjianhui）付费手动配置。
 
 ## 生成教程：
