@@ -133,7 +133,7 @@
         }
     },
     {
-        "title": "Apple Music Streaming and iOS/OS X Apps",
+        "title": "Apple Music Streaming",
         "domains": [
             "aod.itunes.apple.com",
             "mvod.itunes.apple.com",
@@ -237,7 +237,7 @@
                 "222.246.212.75",
                 "223.151.245.42"
             ],
-            "ChinaUnicom-ChinaCache": [
+            "ChinaNet-ChinaCache": [
                 "42.81.22.148",
                 "58.215.109.6",
                 "58.215.109.161",

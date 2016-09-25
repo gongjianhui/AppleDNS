@@ -1,13 +1,8 @@
-# AppleDNS V3.0.5  真的快，快出声。
-**[（作者是个 16 岁的少年，能请我喝一杯咖啡吗？）](https://github.com/gongjianhui/AppleDNS#给我资持大家资不资磁请我喝杯咖啡好不好少年)**
+# AppleDNS Series 2
 
-近期 iTunes 服务在中国集体爆炸，请耐心等待 Apple 恢复服务。（甩锅完毕）
+AppleDNS 通过收集 Apple 在中国的 CDN 数据，解决 App Store / Mac App Store / iTunes Store / Apple Music 在中国部分地区速度缓慢的问题。
 
-（如果你实在看不懂，找作者付费 42 元给你配置吧。邮箱和 iMessage:i@gongjianhui.com, Telegram@gongjianhui）
-
-AppleDNS 通过收集 Apple 在全中国几乎所有省级行政区的 CDN IP 列表，解决 App Store / Mac App Store / iTunes Store / Apple Music / iBooks / TestFlight 在中国部分地区速度缓慢的问题。
-
-感谢一位不愿意透露姓名的 Telegram 用户提供的 Python 生成脚本 (CC0 授权)。
+（配合可靠的代理服务器可以实现对 iCloud 相关服务的加速，请查看 ProxyConfig.md 文件）
 
 本配置文件目前对联通、电信、移动用户友好，
 鹏博士马甲集团（长城宽带、宽带通、电信通）及其他运营商可以尝试联系作者（Telegram @gongjianhui）付费手动配置。
@@ -18,7 +13,7 @@ AppleDNS 通过收集 Apple 在全中国几乎所有省级行政区的 CDN IP �
 
 ```bash
 cd /path/to/AppleDNS
-# 切到 AppleDNS 的文件夹
+# 切换到 AppleDNS 的文件夹
 
 python fetch-timeout.py ChinaUnicom/ChinaNet/CMCC.json 
 
@@ -40,7 +35,7 @@ OS X：[#41](../../issues/41)
 
 Windows：<kbd>ipconfig /flushdns</kbd>
 
-## DNSMASQ 用户和 MERLIN 用户警告：
+## DNSMASQ 用户和 MERLIN 固件用户警告：
 
 请删除配置文件中的
 
@@ -48,21 +43,21 @@ Windows：<kbd>ipconfig /flushdns</kbd>
 address=/itunes.apple.com/***
 ```
 
-该配置在 DNSMASQ 中意味着将 `itunes.apple.com` 泛解析！
+该配置在 dnsmasq 中意味着将 `itunes.apple.com` 泛解析，请务必删除。
 
 ## 其他
 多运营商切换用户可以尝试配合 [SwitchHosts!](https://github.com/oldj/SwitchHosts) 使用。
 
 手动操作指南：请查看 OLD 分支。
 
-**如果你是 Apple Music 重度用户，请额外通过 Music.json 生成单独的 Apple Music 配置覆盖原先配置中相关域名，可解决非热门歌曲无法加载、速度慢问题.（生成方法同上）**
+**如果你是 Apple Music 重度用户，可额外通过 Music.json 生成单独的 Apple Music 配置覆盖原先配置中相关域名，可解决非热门歌曲无法加载、速度慢问题.（生成方法同上）**
 
-## 给我资持，大家资不资磁？（请我喝杯咖啡好不好，少年？）
-![](https://s3-up.gongjianhui.com/money.png?a)
+## 给我资持，大家资不资磁？（作者咖啡因不耐受，要不请我吸一盒维他柠檬茶？）
 ### 支付宝: i@gongjianhui.com
 ### BTC: 1Jianhui1ZUDHDCz1TGzGH2rWaxas1GS9S
 
 -----------------------------------------------------
 
 Apple、App Store、Apple Music 和 iTunes 是 Apple Inc. 在美国和其他 国家/地区的注册商标。
+AppleDNS 不是由 Apple Inc. 提供的服务。
 
