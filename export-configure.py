@@ -51,7 +51,7 @@ def find_fast_ip(ipset):
 
     def handle_sorted():
         data = sum(list(map(handle_delta, ipset.items())), [])
-        return sorted(data, key=attrgetter('avg_rtt'))
+        return sorted(filter(lambda x: x.avg_rtt>0, data), key=attrgetter('avg_rtt'))
 
     iptable = handle_sorted()
     return iptable[0] if iptable else None
