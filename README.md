@@ -58,6 +58,6 @@ address=/itunes.apple.com/***
 
 -----------------------------------------------------
 
-Apple、App Store、Apple Music 和 iTunes 是 Apple Inc. 在美国和其他 国家/地区的注册商标。
+Apple、AppStore、Apple Music 和 iTunes 是 Apple Inc. 在美国和其他 国家/地区的注册商标。
 AppleDNS 不是由 Apple Inc. 提供的服务。
 
