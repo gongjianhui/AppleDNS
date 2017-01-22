@@ -52,10 +52,10 @@ address=/itunes.apple.com/***
 
 **如果你是 Apple Music 重度用户，可额外通过 Music.json 生成单独的 Apple Music 配置覆盖原先配置中相关域名，可解决非热门歌曲无法加载、速度慢问题.（生成方法同上）**
 
-## 给我资持，大家资不资磁？（作者咖啡因不耐受，要不请我吸一盒维他柠檬茶？）
+## 给我资持，大家资不资磁？
 ### 支付宝: i@gongjianhui.com
 ### BTC: 1Jianhui1ZUDHDCz1TGzGH2rWaxas1GS9S
-
+[](https://utt.one/paycodes.png)
 -----------------------------------------------------
 
 Apple、AppStore、Apple Music 和 iTunes 是 Apple Inc. 在美国和其他 国家/地区的注册商标。
