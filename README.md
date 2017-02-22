@@ -4,7 +4,7 @@ AppleDNS 通过收集 Apple 在中国的 CDN 数据，解决 iTunes iCloud 等 A
 
 本配置文件目前对联通、电信、移动用户友好。
 
-使用 [GFW.cat 国际网络优化服务](https://my.gfw.cat) 可获取更优质、全面的国际网络优化体验。
+使用 [GFW.cat 国际网络优化服务](https://my.gfw.cat/?ghad) 可获取更优质、全面的国际网络优化体验。
 
 ## 生成教程：
 确保你系统中安装了 Python 3.4+ 或者 Python 2.7+ (macOS 和多数 Linux 发行版内建)
