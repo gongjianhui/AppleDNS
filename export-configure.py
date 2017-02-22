@@ -16,7 +16,7 @@ from io import open
 formats = {
     'hosts': '{ip:<15} {domain}',
     'surge': '{domain} = {ip}',
-    'merlin': 'address=/{domain}/{ip}',
+    'dnsmasq': 'address=/{domain}/{ip}',
     'ros': 'add name {domain} address={ip}',
     'unbound': '{domain} IN A {ip}'
 }
