@@ -2,9 +2,8 @@
 
 AppleDNS 通过收集 Apple 在中国的 CDN 数据，解决 iTunes iCloud 等 Apple 网络服务在中国大陆部分地区加载缓慢的问题。
 
-本配置文件目前对联通、电信、移动用户友好。
+目前该项目已暂停更新，部分内容可能已经过期，请慎重使用。
 
-使用 [GFW.cat 国际网络优化服务](https://my.gfw.cat/?ghad) 可获取更优质、全面的国际网络优化体验。
 
 ## 生成教程：
 确保你系统中安装了 Python 3.4+ 或者 Python 2.7+ (macOS 和多数 Linux 发行版内建)
@@ -46,10 +45,6 @@ address=/itunes.apple.com/***
 
 ## 其他
 多运营商切换用户可以尝试配合 [SwitchHosts!](https://github.com/oldj/SwitchHosts) 使用。
-
-## 给我资持，大家资不资磁？
-### Alipay: i@gongjianhui.com
-### BTC: 1Jianhui1ZUDHDCz1TGzGH2rWaxas1GS9S
 
 -----------------------------------------------------
 
